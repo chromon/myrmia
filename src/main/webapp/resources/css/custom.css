@@ -1,0 +1,145 @@
+
+.custom-tags {
+    margin: -15px 0 20px;
+}
+
+.custom-tags li {
+    display: inline-block;
+    background: #df003a;
+    border: 1px solid transparent;
+}
+
+.custom-tags li a {
+    color: #fff;
+    padding: 10px;
+}
+
+.comments-area {
+    background: #fff;
+    /*border-bottom: 1px solid #eee;*/
+    padding: 50px 0 0;
+    margin-top: 50px;
+}
+
+.comments-area h4 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #222222;
+    font-size: 18px;
+}
+
+.comments-area .comment-list {
+    padding-bottom: 48px;
+}
+
+.comments-area .thumb {
+    margin-right: 20px;
+}
+
+.comments-area h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.comments-area a {
+    color: #222222;
+}
+
+.comments-area .date {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 13px;
+}
+
+.comments-area .comment {
+    color: #777777;
+    margin-bottom: 0px;
+}
+
+.comments-area .comment-list.left-padding {
+    padding-left: 25px;
+}
+
+.section-top-border2 {
+    /* padding: 70px 0; */
+    border-top: 1px dotted #eee;
+}
+
+.blog-pagination {
+    padding: 25px 0;
+}
+
+.blog-pagination .page-item {
+    border: none;
+}
+
+.blog-pagination .page-item:first-child .page-link {
+    border-radius: 0;
+}
+
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.blog-pagination .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #8a8a8a;
+    border: none;
+}
+
+.page-link {
+    background: transparent;
+    font-weight: 400;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #df003a;
+    border-color: #df003a;
+}
+
+.page-link:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.gallery-title {
+    margin: 30px 0 10px;
+}
+
+.archive-time {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.archive-title {
+    font-size: 16px;
+    padding-bottom: 10px !important; 
+}
+
+.custom-bgc {
+    background-color: #f9f9ff;
+}
+
+.install-setting {
+    margin-bottom: 40px;
+}
+
+.install-setting-btn {
+    margin-top: 20px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}

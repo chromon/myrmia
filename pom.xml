@@ -39,6 +39,9 @@
         <hibernate.version>5.2.10.Final</hibernate.version>
         <mysql.version>6.0.6</mysql.version>
         <jackson.version>2.9.1</jackson.version>
+        <freemarker.version>2.3.28</freemarker.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <!-- 继承自该项目的所有子项目的默认依赖信息。
@@ -155,6 +158,18 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>5.1.0.RELEASE</version>
+        </dependency>
+
+        <!-- freemarker dependency -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+        </dependency>
 
 
         <!-- hibernate dependency -->
@@ -191,4 +206,5 @@
         </dependency>
 
     </dependencies>
+
 </project>

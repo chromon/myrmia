@@ -59,7 +59,7 @@
 
 
 <!-- Start banner Area -->
-<section class="generic-banner">
+<!-- <section class="generic-banner">
     <div class="container">
         <div class="row height align-items-center justify-content-center">
             <div class="col-lg-10">
@@ -70,60 +70,38 @@
             </div>
         </div>
     </div>
-</section>
+</section>	 -->
 <!-- End banner Area -->
 
 
 <!-- Start latest-blog Area -->
 <section class="latest-blog-area section-gap" id="blog">
     <div class="container">
+        <!-- <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Latest News from our Blog</h1>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+            </div>
+        </div>	 -->
+        <h3 class="archive-time"># January, 2018</h3>
         <div class="row">
-            <div class="col-lg-6 single-blog">
+            <div class="col-lg-4 single-blog">
                 <!-- <img class="img-fluid" src="img/b1.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
+                <a href="#"><h4 class="archive-title">Portable latest Fashion for young women</h4></a>
                 <p class="post-date">31st January, 2018</p>
             </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
+            <div class="col-lg-4 single-blog">
+                <a href="#"><h4 class="archive-title">Portable latest Fashion for young women</h4></a>
                 <p class="post-date">31st January, 2018</p>
             </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
+            <div class="col-lg-4 single-blog">
+                <a href="#"><h4 class="archive-title">Portable latest Fashion for young women</h4></a>
                 <p class="post-date">31st January, 2018</p>
             </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
+            <div class="col-lg-4 single-blog">
+                <a href="#"><h4 class="archive-title">Portable latest Fashion for young women</h4></a>
                 <p class="post-date">31st January, 2018</p>
             </div>
         </div>

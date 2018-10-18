@@ -6,7 +6,7 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="">
     <!-- Author Meta -->
-    <meta name="author" content="codepixer">
+    <meta name="author" content="ellery">
     <!-- Meta Description -->
     <meta name="description" content="">
     <!-- Meta Keyword -->
@@ -14,7 +14,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Startup</title>
+    <title>Myrmia</title>
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">  -->
     <!--
@@ -39,12 +39,12 @@
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#home">Home</a></li>
-                    <li><a href="#offer">We Offer</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#project">Project</a></li>
-                    <li><a href="#price">Price</a></li>
-                    <!-- 				          <li><a href="#blog">Blog</a></li> -->
+                    <li class="menu-active"><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#offer">We Offer</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#project">Project</a></li>
+                    <li><a href="index.html#price">Price</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
                     <li class="menu-has-children"><a href="">Pages</a>
                         <ul>
                             <li><a href="generic.html">Generic</a></li>
@@ -58,102 +58,43 @@
 </header><!-- #header -->
 
 
-<!-- Start banner Area -->
-<section class="generic-banner">
+<!-- Start Align Area -->
+<div class="whole-wrap">
     <div class="container">
-        <div class="row height align-items-center justify-content-center">
-            <div class="col-lg-10">
-                <div class="generic-banner-content">
-                    <h2 class="text-white">The Elements Page</h2>
-                    <p class="text-white">It won’t be a bigger problem to find one video game lover in your <br> neighbor. Since the introduction of Virtual Game.</p>
+
+        <div class="section-top-border">
+            <h3 class="gallery-title">Image Gallery</h3>
+            <div class="row gallery-items">
+                <div class="col-md-4 gallery-item">
+                    <a href="/resources/img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/elements/g7.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(/resources/img/elements/g7.jpg);"></div></a>
                 </div>
             </div>
         </div>
+
     </div>
-</section>
-<!-- End banner Area -->
-
-
-<!-- Start latest-blog Area -->
-<section class="latest-blog-area section-gap" id="blog">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b1.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
-                <p class="post-date">31st January, 2018</p>
-            </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
-                <p class="post-date">31st January, 2018</p>
-            </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
-                <p class="post-date">31st January, 2018</p>
-            </div>
-            <div class="col-lg-6 single-blog">
-                <!-- <img class="img-fluid" src="img/b2.jpg" alt=""> -->
-                <ul class="tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life style</a></li>
-                </ul>
-                <a href="#"><h4>Portable latest Fashion for young women</h4></a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                </p>
-                <p class="post-date">31st January, 2018</p>
-            </div>
-        </div>
-        <nav class="blog-pagination justify-content-center d-flex">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Previous">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-left"></span>
-                                    </span>
-                    </a>
-                </li>
-                <li class="page-item"><a href="#" class="page-link">01</a></li>
-                <li class="page-item active"><a href="#" class="page-link">02</a></li>
-                <li class="page-item"><a href="#" class="page-link">03</a></li>
-                <li class="page-item"><a href="#" class="page-link">04</a></li>
-                <li class="page-item"><a href="#" class="page-link">09</a></li>
-                <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-right"></span>
-                                    </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</section>
-<!-- End latest-blog Area -->
-
+</div>
+<!-- End Align Area -->
 
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
@@ -228,23 +169,22 @@
 </footer>
 <!-- End footer Area -->
 
-<script src="/resources/js/jquery-2.2.4.min.js"></script>
+
+<script src="js/jquery-2.2.4.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-<script src="/resources/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script> -->
 <!-- <script src="js/easing.min.js"></script>            -->
 <!-- <script src="js/hoverIntent.js"></script> -->
-<script src="/resources/js/superfish.min.js"></script>
-<script src="/resources/js/jquery.ajaxchimp.min.js"></script>
-<script src="/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="/resources/js/owl.carousel.min.js"></script>
-<script src="/resources/js/jquery.sticky.js"></script>
-<script src="/resources/js/jquery.nice-select.min.js"></script>
+<script src="js/superfish.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
 <!-- <script src="js/parallax.min.js"></script>  -->
 <!-- <script src="js/mail-script.js"></script>               -->
-<script src="/resources/js/main.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
-
-
-

@@ -28,7 +28,7 @@ public class UsersController {
 
         model.addAttribute("name", "ellery");
 
-        return "index";
+        return "test";
     }
 
     @Autowired

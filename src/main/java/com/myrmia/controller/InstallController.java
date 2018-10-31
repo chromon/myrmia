@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Ellery on 2018/10/13.
  */
 @Controller
-public class galleryController {
+public class InstallController {
 
-    @RequestMapping(value="/gallery", method = RequestMethod.GET)
+    @RequestMapping(value="/install", method = RequestMethod.GET)
     public String test(Model model) {
-        return "gallery";
+        return "install";
     }
 
 }

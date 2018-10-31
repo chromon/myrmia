@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * users controller
+ * index controller
  * Created by Ellery on 2018/10/13.
  */
 @Controller
-public class archivesController {
+public class IndexController {
 
-    @RequestMapping(value="/archives", method = RequestMethod.GET)
+    @RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
     public String test(Model model) {
-        return "archives";
+        return "index";
     }
 
 }

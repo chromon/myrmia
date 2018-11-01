@@ -11,9 +11,8 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/images/favicon.png">
     <title>Ela - Bootstrap Admin Dashboard Template</title>
-
+    <!-- Bootstrap Core CSS -->
     <#include "inc/css.ftl">
-
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -128,14 +127,14 @@
                                         </a>
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
                                             </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
                                             </div>
@@ -151,7 +150,7 @@
                     <!-- End Messages -->
                     <!-- Profile -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/resources/admin/images/7.jpg" alt="user" class="profile-pic" /></a>
+                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="static/images/7.jpg" alt="user" class="profile-pic" /></a>
                         <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                             <ul class="dropdown-user">
                                 <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
@@ -191,8 +190,8 @@
                                 </span>
                         </a>
                     </li>
-                    <li>
-                        <a class="" href="#" aria-expanded="false">
+                    <li class="active">
+                        <a class="" href="#" aria-expanded="false" class="active">
                             <i class="fa fa-list"></i>
                             <span class="hide-menu">
                                     文章管理
@@ -268,155 +267,118 @@
         <!-- End Bread crumb -->
         <!-- Container fluid  -->
         <div class="container-fluid">
-            <!-- Start Page Content -->
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-pencil-square-o f-s-40 color-primary"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>568120</h2>
-                                <p class="m-b-0">发表文章</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-commenting f-s-40 color-success"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>1178</h2>
-                                <p class="m-b-0">留言</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-cloud-upload f-s-40 color-warning"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>25</h2>
-                                <p class="m-b-0">上传附件</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-link f-s-40 color-danger"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>847</h2>
-                                <p class="m-b-0">友链</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-title">
-                            <h4>最新文章</h4>
+                            <h4>文章管理</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th>标题</th>
-                                        <th>日期</th>
-                                        <th>评论</th>
+                                        <th>文章标题</th>
+                                        <th>发布时间</th>
+                                        <th>浏览量</th>
+                                        <th>所属分类</th>
+                                        <th>发布状态</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
                                     <tr>
                                         <td>John Abraham</td>
+                                        <td><span>  January 22</span></td>
                                         <td><span>iBook</span></td>
+                                        <td><span>453</span></td>
                                         <td><span class="badge badge-success">5</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
+                                                <i class="fa fa-pencil"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>John Abraham</td>
-                                        <td><span>iPhone</span></td>
-                                        <td><span class="badge badge-success">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>456 pcs</span></td>
-                                        <td><span class="badge badge-success">12</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
+                                        <td><span>  January 22</span></td>
                                         <td><span>iBook</span></td>
-                                        <td><span class="badge badge-success">3</span></td>
+                                        <td><span>12</span></td>
+                                        <td><span class="badge badge-danger">0</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
+                                                <i class="fa fa-pencil"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Abraham</td>
+                                        <td><span>  January 22</span></td>
+                                        <td><span>iBook</span></td>
+                                        <td><span>786</span></td>
+                                        <td><span class="badge badge-primary">12</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
+                                                <i class="fa fa-pencil"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Abraham</td>
+                                        <td><span>  January 22</span></td>
+                                        <td><span>iBook</span></td>
+                                        <td><span>3452</span></td>
+                                        <td><span class="badge badge-warning">3</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
+                                                <i class="fa fa-pencil"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                Default
+                                            </button>
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>最新留言</h4>
-                        </div>
-                        <div class="recent-comment">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media no-border">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. Michael</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-date">October 21, 2018</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="dataTables_wrapper">
+                        <div class="dataTables_paginate paging_simple_numbers" id="example23_paginate"><a class="paginate_button previous disabled" aria-controls="example23" data-dt-idx="0" tabindex="0" id="example23_previous">Previous</a><span><a class="paginate_button current" aria-controls="example23" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="example23" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="example23" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="example23" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="example23" data-dt-idx="5" tabindex="0">5</a><a class="paginate_button " aria-controls="example23" data-dt-idx="6" tabindex="0">6</a></span><a class="paginate_button next" aria-controls="example23" data-dt-idx="7" tabindex="0" id="example23_next">Next</a></div>
                     </div>
                 </div>
             </div>
@@ -428,10 +390,8 @@
     <!-- End Page wrapper  -->
 </div>
 <!-- End Wrapper -->
-
-<!-- js -->
+<!-- All Jquery -->
 <#include "inc/js.ftl">
-<!-- end js -->
 
 </body>
 

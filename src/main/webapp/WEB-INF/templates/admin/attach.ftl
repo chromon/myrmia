@@ -9,11 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon.png">
     <title>Ela - Bootstrap Admin Dashboard Template</title>
-
+    <!-- Bootstrap Core CSS -->
     <#include "inc/css.ftl">
-
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -31,10 +30,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
                     <!-- Logo icon -->
-                    <b><img src="/resources/admin/images/logo.png" alt="homepage" class="dark-logo" /></b>
+                    <b><img src="static/images/logo.png" alt="homepage" class="dark-logo" /></b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
-                    <span><img src="/resources/admin/images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                    <span><img src="static/images/logo-text.png" alt="homepage" class="dark-logo" /></span>
                 </a>
             </div>
             <!-- End Logo -->
@@ -114,28 +113,28 @@
                                     <div class="message-center">
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
                                             </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
                                             </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
                                             </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="/resources/admin/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                            <div class="user-img"> <img src="static/images/7.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
                                             </div>
@@ -151,7 +150,7 @@
                     <!-- End Messages -->
                     <!-- Profile -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/resources/admin/images/7.jpg" alt="user" class="profile-pic" /></a>
+                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="static/images/7.jpg" alt="user" class="profile-pic" /></a>
                         <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                             <ul class="dropdown-user">
                                 <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
@@ -200,8 +199,8 @@
                         </a>
                     </li>
                     <li class="nav-label">页面</li>
-                    <li>
-                        <a class="" href="#" aria-expanded="false">
+                    <li class="active">
+                        <a class="" href="#" aria-expanded="false" class="active">
                             <i class="fa fa-plus-square-o"></i>
                             <span class="hide-menu">
                                     页面管理
@@ -270,157 +269,26 @@
         <div class="container-fluid">
             <!-- Start Page Content -->
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-pencil-square-o f-s-40 color-primary"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>568120</h2>
-                                <p class="m-b-0">发表文章</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-commenting f-s-40 color-success"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>1178</h2>
-                                <p class="m-b-0">留言</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-cloud-upload f-s-40 color-warning"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>25</h2>
-                                <p class="m-b-0">上传附件</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card p-30">
-                        <div class="media">
-                            <div class="media-left meida media-middle">
-                                <span><i class="fa fa-link f-s-40 color-danger"></i></span>
-                            </div>
-                            <div class="media-body media-text-right">
-                                <h2>847</h2>
-                                <p class="m-b-0">友链</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6">
+                <div class="col-12">
                     <div class="card">
-                        <div class="card-title">
-                            <h4>最新文章</h4>
-                        </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>标题</th>
-                                        <th>日期</th>
-                                        <th>评论</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iBook</span></td>
-                                        <td><span class="badge badge-success">5</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iPhone</span></td>
-                                        <td><span class="badge badge-success">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>456 pcs</span></td>
-                                        <td><span class="badge badge-success">12</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iBook</span></td>
-                                        <td><span class="badge badge-success">3</span></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>最新留言</h4>
-                        </div>
-                        <div class="recent-comment">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
+                            <h4 class="card-title">文件管理</h4>
+                            <h6 class="card-subtitle">For multiple file upload put class <code>.dropzone</code> to form.</h6>
+                            <form action="#" class="dropzone">
+                                <div class="fallback">
+                                    <input name="file" type="file" multiple />
                                 </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media no-border">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="/resources/admin/images/7.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. Michael</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-date">October 21, 2018</div>
-                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 m-b-20"><img src="./static/images/chair.jpg" class="img-responsive radius"></div>
+                                <div class="col-lg-3 col-md-6 m-b-20"><img src="./static/images/chair.jpg" class="img-responsive radius"></div>
+                                <div class="col-lg-3 col-md-6 m-b-20"><img src="./static/images/chair.jpg" class="img-responsive radius"></div>
+                                <div class="col-lg-3 col-md-6 m-b-20"><img src="./static/images/chair.jpg" class="img-responsive radius"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- End PAge Content -->
         </div>
         <!-- End Container fluid  -->
@@ -428,10 +296,8 @@
     <!-- End Page wrapper  -->
 </div>
 <!-- End Wrapper -->
-
-<!-- js -->
+<!-- All Jquery -->
 <#include "inc/js.ftl">
-<!-- end js -->
 
 </body>
 

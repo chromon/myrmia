@@ -82,13 +82,14 @@
                 <prop key="datetime_format">yyyy-MM-dd</prop><!-- 时间格式化 -->
                 <prop key="date_format">yyyy-MM-dd</prop>
                 <prop key="number_format">#.##</prop>
+                <prop key="cache_storage">freemarker.cache.NullCacheStorage</prop>
             </props>
         </property>
     </bean>
 
     <bean id="freeMarkerViewResolver"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="cache" value="true" />
+        <property name="cache" value="false" />
         <property name="prefix" value="" /><!-- 上面已经配了，这里就不用配啦 -->
         <property name="suffix" value=".ftl" />
         <property name="contentType" value="text/html;charset=UTF-8" />

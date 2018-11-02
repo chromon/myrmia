@@ -2,8 +2,8 @@
 <!-- All Jquery -->
 <script src="/resources/admin/js/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<!-- <script src="js/lib/bootstrap/js/popper.min.js"></script> -->
-<!-- <script src="static/jsbootstrap.min.js"></script> -->
+<script src="/resources/admin/js/popper.min.js"></script>
+<script src="/resources/admin/js/bootstrap.min.js"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
 <script src="/resources/admin/js/jquery.slimscroll.js"></script>
 <!--Menu sidebar -->

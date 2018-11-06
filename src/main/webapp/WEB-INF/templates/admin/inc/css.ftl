@@ -11,3 +11,6 @@
     <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" /> -->
 <link href="/resources/admin/css/helper.css" rel="stylesheet">
 <link href="/resources/admin/css/style.css" rel="stylesheet">
+<link href="/resources/admin/css/custom.css" rel="stylesheet">
+
+<link href="/resources/admin/plugins/summernote/summernote-bs4.css" rel="stylesheet"/>

@@ -15,3 +15,5 @@
 <script src="/resources/admin/js/custom.min.js"></script>
 
 <script src="/resources/admin/js/dropzone.js"></script>
+
+<script src="/resources/admin/plugins/summernote/summernote-bs4.js"></script>

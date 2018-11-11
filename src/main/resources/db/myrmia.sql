@@ -29,7 +29,7 @@ CREATE TABLE t_contents (
     modified INTEGER (10),
     content TEXT,
     author_id INTEGER (10) NOT NULL,
-    type VARCHAR (16) NOT NULL,
+    content_type VARCHAR (16) NOT NULL,
     status VARCHAR (16) NOT NULL,
     fmt_type VARCHAR (16) DEFAULT ('markdown'),
     tags VARCHAR (200),
@@ -46,7 +46,7 @@ CREATE TABLE t_comments (
     coid INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     cid INTEGER DEFAULT (0) NOT NULL,
     created INTEGER (10) NOT NULL,
-    author VARCHAR (200) NOT NULL,
+    author_name VARCHAR (200) NOT NULL,
     author_id INTEGER (10) DEFAULT (0),
     owner_id INTEGER (10) DEFAULT (0),
     mail VARCHAR (200) NOT NULL,
@@ -54,9 +54,9 @@ CREATE TABLE t_comments (
     ip VARCHAR (64),
     agent VARCHAR (200),
     content TEXT NOT NULL,
-    type VARCHAR (16),
+    comment_type VARCHAR (16),
     status VARCHAR (16),
-    parent INTEGER (10) DEFAULT (0)
+    parent_id INTEGER (10) DEFAULT (0)
 );
 
 DROP TABLE IF EXISTS t_logs;
@@ -74,21 +74,22 @@ CREATE TABLE t_metas (
     mid INTEGER PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
     name VARCHAR (200) NOT NULL,
     slug VARCHAR (200),
-    type VARCHAR (32) NOT NULL,
+    metas_type VARCHAR (32) NOT NULL,
     description VARCHAR (255),
     sort INTEGER (4) DEFAULT (0),
-    parent INTEGER (10) DEFAULT (0)
+    parent_id INTEGER (10) DEFAULT (0)
 );
 
 DROP TABLE IF EXISTS t_options;
 CREATE TABLE t_options (
-    name VARCHAR (100) PRIMARY KEY UNIQUE NOT NULL,
-    value TEXT,
+    options_name VARCHAR (100) PRIMARY KEY UNIQUE NOT NULL,
+    options_value TEXT,
     description VARCHAR (255)
 );
 
 DROP TABLE IF EXISTS t_relationships;
 CREATE TABLE t_relationships (
+    rid INTEGER PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
     cid INTEGER (10) NOT NULL,
     mid INTEGER (10) NOT NULL
 );
@@ -96,9 +97,9 @@ CREATE TABLE t_relationships (
 DROP TABLE IF EXISTS t_attach;
 CREATE TABLE t_attach (
     id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    fname VARCHAR (100) NOT NULL,
-    ftype VARCHAR (50),
-    fkey VARCHAR (100) NOT NULL,
+    file_name VARCHAR (100) NOT NULL,
+    file_type VARCHAR (50),
+    file_key VARCHAR (100) NOT NULL,
     author_id INTEGER (10) NOT NULL,
     created INTEGER (10) NOT NULL
 );

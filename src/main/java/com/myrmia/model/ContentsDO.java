@@ -1,9 +1,13 @@
 package com.myrmia.model;
 
+import javax.persistence.*;
+
 /**
  *  contents do
  * Created by Ellery on 2018/11/12.
  */
+@Entity
+@Table(name = "t_contents")
 public class ContentsDO {
 
     private int cid;
@@ -42,6 +46,9 @@ public class ContentsDO {
 
     private int allowFeed;
 
+    @Id
+    @Column(name = "cid", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getCid() {
         return cid;
     }
@@ -50,6 +57,7 @@ public class ContentsDO {
         this.cid = cid;
     }
 
+    @Column(name = "title", nullable = false, columnDefinition = "varchar(255)")
     public String getTitle() {
         return title;
     }
@@ -58,6 +66,7 @@ public class ContentsDO {
         this.title = title;
     }
 
+    @Column(name = "slug", columnDefinition = "varchar(255) unique")
     public String getSlug() {
         return slug;
     }
@@ -66,6 +75,7 @@ public class ContentsDO {
         this.slug = slug;
     }
 
+    @Column(name = "thumb_img", columnDefinition = "varchar(255)")
     public String getThumbImg() {
         return thumbImg;
     }
@@ -74,6 +84,7 @@ public class ContentsDO {
         this.thumbImg = thumbImg;
     }
 
+    @Column(name = "created", nullable = false, columnDefinition = "integer(10)")
     public int getCreated() {
         return created;
     }
@@ -82,6 +93,7 @@ public class ContentsDO {
         this.created = created;
     }
 
+    @Column(name = "modified", columnDefinition = "integer(10)")
     public int getModified() {
         return modified;
     }
@@ -90,6 +102,7 @@ public class ContentsDO {
         this.modified = modified;
     }
 
+    @Column(name = "content", columnDefinition = "text")
     public String getContent() {
         return content;
     }
@@ -98,6 +111,7 @@ public class ContentsDO {
         this.content = content;
     }
 
+    @Column(name = "author_id", nullable = false, columnDefinition = "integer(10)")
     public int getAuthorId() {
         return authorId;
     }
@@ -106,6 +120,7 @@ public class ContentsDO {
         this.authorId = authorId;
     }
 
+    @Column(name = "content_type", nullable = false, columnDefinition = "varchar(16)")
     public String getContentType() {
         return contentType;
     }
@@ -114,6 +129,7 @@ public class ContentsDO {
         this.contentType = contentType;
     }
 
+    @Column(name = "status", nullable = false, columnDefinition = "varchar(16)")
     public String getStatus() {
         return status;
     }
@@ -122,6 +138,7 @@ public class ContentsDO {
         this.status = status;
     }
 
+    @Column(name = "fmt_type", columnDefinition = "varchar(16) default('markdown')")
     public String getFmtType() {
         return fmtType;
     }
@@ -130,6 +147,7 @@ public class ContentsDO {
         this.fmtType = fmtType;
     }
 
+    @Column(name = "tags", columnDefinition = "varchar(200)")
     public String getTags() {
         return tags;
     }
@@ -138,6 +156,7 @@ public class ContentsDO {
         this.tags = tags;
     }
 
+    @Column(name = "categories", columnDefinition = "varchar(200)")
     public String getCategories() {
         return categories;
     }
@@ -146,6 +165,7 @@ public class ContentsDO {
         this.categories = categories;
     }
 
+    @Column(name = "hits", columnDefinition = "integer(10) default(0)")
     public int getHits() {
         return hits;
     }
@@ -154,6 +174,7 @@ public class ContentsDO {
         this.hits = hits;
     }
 
+    @Column(name = "comments_num", columnDefinition = "integer(1) default(0)")
     public int getCommentsNum() {
         return commentsNum;
     }
@@ -162,6 +183,7 @@ public class ContentsDO {
         this.commentsNum = commentsNum;
     }
 
+    @Column(name = "allow_comment", columnDefinition = "integer(1) default(1)")
     public int getAllowComment() {
         return allowComment;
     }
@@ -170,6 +192,7 @@ public class ContentsDO {
         this.allowComment = allowComment;
     }
 
+    @Column(name = "allow_ping", columnDefinition = "integer(1)")
     public int getAllowPing() {
         return allowPing;
     }
@@ -178,6 +201,7 @@ public class ContentsDO {
         this.allowPing = allowPing;
     }
 
+    @Column(name = "allow_feed", columnDefinition = "integer(1)")
     public int getAllowFeed() {
         return allowFeed;
     }

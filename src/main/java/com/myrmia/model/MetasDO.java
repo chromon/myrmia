@@ -1,9 +1,13 @@
 package com.myrmia.model;
 
+import javax.persistence.*;
+
 /**
  * metas do
  * Created by Ellery on 2018/11/12.
  */
+@Entity
+@Table(name = "t_metas")
 public class MetasDO {
 
     private int mid;
@@ -20,6 +24,9 @@ public class MetasDO {
 
     private int parentId;
 
+    @Id
+    @Column(name = "mid", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getMid() {
         return mid;
     }
@@ -28,6 +35,7 @@ public class MetasDO {
         this.mid = mid;
     }
 
+    @Column(name = "name", nullable = false, columnDefinition = "varchar(200)")
     public String getName() {
         return name;
     }
@@ -36,6 +44,7 @@ public class MetasDO {
         this.name = name;
     }
 
+    @Column(name = "slug", columnDefinition = "varchar(200)")
     public String getSlug() {
         return slug;
     }
@@ -44,6 +53,7 @@ public class MetasDO {
         this.slug = slug;
     }
 
+    @Column(name = "metas_type",nullable = false, columnDefinition = "varchar(32)")
     public String getMetasType() {
         return metasType;
     }
@@ -52,6 +62,7 @@ public class MetasDO {
         this.metasType = metasType;
     }
 
+    @Column(name = "description", columnDefinition = "varchar(255)")
     public String getDescription() {
         return description;
     }
@@ -60,6 +71,7 @@ public class MetasDO {
         this.description = description;
     }
 
+    @Column(name = "sort", columnDefinition = "integer(4) default(0)")
     public int getSort() {
         return sort;
     }
@@ -68,6 +80,7 @@ public class MetasDO {
         this.sort = sort;
     }
 
+    @Column(name = "parent_id", columnDefinition = "integer(10) default(0)")
     public int getParentId() {
         return parentId;
     }

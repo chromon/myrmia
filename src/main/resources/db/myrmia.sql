@@ -82,7 +82,8 @@ CREATE TABLE t_metas (
 
 DROP TABLE IF EXISTS t_options;
 CREATE TABLE t_options (
-    options_name VARCHAR (100) PRIMARY KEY UNIQUE NOT NULL,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    options_name VARCHAR (100) UNIQUE NOT NULL,
     options_value TEXT,
     description VARCHAR (255)
 );

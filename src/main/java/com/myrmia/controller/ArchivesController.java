@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Ellery on 2018/10/13.
  */
 @Controller
-public class ArchivesController {
+public class ArchivesController implements BaseController {
 
     @RequestMapping(value="/archives", method = RequestMethod.GET)
     public String test(Model model) {
-        return "archives";
+        return "theme/" + THEME + "/archives";
     }
 
 }

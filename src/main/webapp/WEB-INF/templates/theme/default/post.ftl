@@ -78,7 +78,7 @@
                     <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                             <div class="thumb">
-                                <img src="/resources/img/i1.jpg" alt="">
+                                <img src="/resources/theme/default/img/i1.jpg" alt="">
                             </div>
                             <div class="desc">
                                 <h5><a href="#">Emilly Blunt</a></h5>
@@ -97,7 +97,7 @@
                     <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                             <div class="thumb">
-                                <img src="/resources/img/i1.jpg" alt="">
+                                <img src="/resources/theme/default/img/i1.jpg" alt="">
                             </div>
                             <div class="desc">
                                 <h5><a href="#">Elsie Cunningham</a></h5>
@@ -116,7 +116,7 @@
                     <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                             <div class="thumb">
-                                <img src="/resources/img/i1.jpg" alt="">
+                                <img src="/resources/theme/default/img/i1.jpg" alt="">
                             </div>
                             <div class="desc">
                                 <h5><a href="#">Annie Stephens</a></h5>
@@ -135,7 +135,7 @@
                     <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                             <div class="thumb">
-                                <img src="/resources/img/i1.jpg" alt="">
+                                <img src="/resources/theme/default/img/i1.jpg" alt="">
                             </div>
                             <div class="desc">
                                 <h5><a href="#">Maria Luna</a></h5>

@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Ellery on 2018/10/13.
  */
 @Controller
-public class IndexController {
+public class IndexController implements BaseController {
 
     @RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
     public String test(Model model) {
-        return "index";
+        return "theme/" + THEME + "/index";
     }
 
 }

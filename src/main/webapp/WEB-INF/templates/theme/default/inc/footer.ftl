@@ -42,14 +42,14 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
-                        <li><img src="/resources/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
+                        <li><img src="/resources/theme/default/img/i1.jpg" alt=""></li>
                     </ul>
                 </div>
             </div>

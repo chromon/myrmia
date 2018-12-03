@@ -39,6 +39,8 @@
 <section class="sample-text-area custom-bgc">
     <div class="container">
         <div class="col-lg-10 offset-lg-1">
+
+            <#if !isInstalled>
             <div class="single-testimonial item">
                 <h4 class="install-setting">网站设置</h4>
                 <form action="#">
@@ -98,6 +100,12 @@
                     </div>
                 </form>
             </div>
+            <#else>
+            <div class="single-testimonial item">
+                你已经安装过Tale了，如需重新安装请提前做好备份，并删除根目录下的
+                <mark>install.lock</mark> 文件。
+            </div>
+            </#if>
         </div>
     </div>
 </section>

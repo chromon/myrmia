@@ -41,30 +41,36 @@
         <div class="col-lg-10 offset-lg-1">
 
             <#if !isInstalled>
-            <div class="single-testimonial item">
+            <div class="single-testimonial item" id="site_setting">
                 <h4 class="install-setting">网站设置</h4>
                 <form action="#">
                     <div class="mt-10">
-                        <input type="text" name="first_name" placeholder="* 网站名称" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站名称'" required class="single-input">
+                        <input type="text" id="siteTitle" name="siteTitle" placeholder="* 网站名称" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站名称'"
+                               required aria-required="true" maxlength="100" class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="* 网站地址" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站地址'" required class="single-input">
+                        <input type="text" id="siteURL" name="siteURL" placeholder="* 网站地址" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站地址'"
+                               required aria-required="true" class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="* 管理员账号" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员账号'" required class="single-input">
+                        <input type="text" id="adminUser" name="adminUser" placeholder="* 管理员账号" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员账号'"
+                               required aria-required="true" rangelength="[4,20]" class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="* 管理员邮箱" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员邮箱'" required class="single-input">
+                        <input type="email" id="adminEmail" name="adminEmail" placeholder="* 管理员邮箱" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员邮箱'"
+                               required class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="* 管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员密码'" required class="single-input">
+                        <input type="text" id="adminPwd" name="adminPwd" placeholder="* 管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员密码'"
+                               required aria-required="true" rangelength="[6,14]" class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="* 确认管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 确认管理员密码'" required class="single-input">
+                        <input type="password" id="adminPwdConfirm" name="adminPwdConfirm" placeholder="* 确认管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 确认管理员密码'"
+                               required equalTo="#adminPwd" class="single-input">
                     </div>
                     <div class="button-group-area install-setting-btn">
                         <a href="#" class="genric-btn default radius">取消</a>
-                        <a href="#" class="genric-btn primary radius">下一步</a>
+                        <a href="javascript:void(0);" id="install_submit" class="genric-btn primary radius">下一步</a>
                     </div>
                 </form>
             </div>
@@ -91,11 +97,10 @@
                 </form>
             </div>
 
-            <div class="single-testimonial item hide">
+            <div class="single-testimonial item hide" id="site_install_success">
                 <h4 class="install-setting">恭喜，安装完成</h4>
                 <form action="#">
                     <div class="button-group-area install-setting-btn">
-                        <a href="#" class="genric-btn default radius">上一步</a>
                         <a href="#" class="genric-btn primary radius">登录后台</a>
                     </div>
                 </form>

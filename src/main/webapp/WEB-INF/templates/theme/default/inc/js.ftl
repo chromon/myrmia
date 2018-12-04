@@ -14,3 +14,4 @@
 <!-- <script src="js/parallax.min.js"></script>  -->
 <!-- <script src="js/mail-script.js"></script>               -->
 <script src="/resources/theme/default/js/main.js"></script>
+<script src="/resources/theme/default/js/custom.js"></script>

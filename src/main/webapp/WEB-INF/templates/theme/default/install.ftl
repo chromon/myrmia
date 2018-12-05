@@ -49,7 +49,7 @@
                                required aria-required="true" maxlength="100" class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" id="siteURL" name="siteURL" placeholder="* 网站地址" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站地址'"
+                        <input type="text" id="siteURL" name="siteURL" placeholder="* 网站地址" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站地址，未绑定域名则输入 http://ip:port'"
                                required aria-required="true" class="single-input">
                     </div>
                     <div class="mt-10">
@@ -69,8 +69,8 @@
                                required equalTo="#adminPwd" class="single-input">
                     </div>
                     <div class="button-group-area install-setting-btn">
-                        <a href="#" class="genric-btn default radius">取消</a>
-                        <a href="javascript:void(0);" id="install_submit" class="genric-btn primary radius">下一步</a>
+                        <a href="javascript:void(0);" class="genric-btn default radius">取消</a>
+                        <a href="javascript:void(0);" id="install_submit" class="genric-btn primary radius">安装</a>
                     </div>
                 </form>
             </div>
@@ -101,7 +101,7 @@
                 <h4 class="install-setting">恭喜，安装完成</h4>
                 <form action="#">
                     <div class="button-group-area install-setting-btn">
-                        <a href="#" class="genric-btn primary radius">登录后台</a>
+                        <a href="/admin/login" class="genric-btn primary radius">登录后台</a>
                     </div>
                 </form>
             </div>

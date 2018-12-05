@@ -1,4 +1,4 @@
-package com.coeligena.function.security;
+package com.myrmia.utils.security;
 
 import org.springframework.stereotype.Component;
 

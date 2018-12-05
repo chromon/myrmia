@@ -1,5 +1,6 @@
-package com.coeligena.function.security;
+package com.myrmia.utils.security;
 
+import com.myrmia.utils.security.Encrypt;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

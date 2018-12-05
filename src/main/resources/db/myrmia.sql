@@ -10,6 +10,7 @@ CREATE TABLE t_users (
     uid INTEGER PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
     username VARCHAR (64) UNIQUE NOT NULL,
     password VARCHAR (64) NOT NULL,
+    salt VARCHAR(128) NOT NULL,
     email VARCHAR (100),
     home_url VARCHAR (255),
     screen_name VARCHAR (100),
@@ -31,12 +32,12 @@ CREATE TABLE t_contents (
     author_id INTEGER (10) NOT NULL,
     content_type VARCHAR (16) NOT NULL,
     status VARCHAR (16) NOT NULL,
-    fmt_type VARCHAR (16) DEFAULT ('markdown'),
+    fmt_type VARCHAR (16) DEFAULT 'markdown',
     tags VARCHAR (200),
     categories VARCHAR (200),
-    hits INTEGER (10) DEFAULT (0),
-    comments_num INTEGER (1) DEFAULT (0),
-    allow_comment INTEGER (1) DEFAULT (1),
+    hits INTEGER (10) DEFAULT 0,
+    comments_num INTEGER (1) DEFAULT 0,
+    allow_comment INTEGER (1) DEFAULT 1,
     allow_ping INTEGER (1),
     allow_feed INTEGER (1)
 );
@@ -44,11 +45,11 @@ CREATE TABLE t_contents (
 DROP TABLE IF EXISTS t_comments;
 CREATE TABLE t_comments (
     coid INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    cid INTEGER DEFAULT (0) NOT NULL,
+    cid INTEGER DEFAULT 0 NOT NULL,
     created INTEGER (10) NOT NULL,
     author_name VARCHAR (200) NOT NULL,
-    author_id INTEGER (10) DEFAULT (0),
-    owner_id INTEGER (10) DEFAULT (0),
+    author_id INTEGER (10) DEFAULT 0,
+    owner_id INTEGER (10) DEFAULT 0,
     mail VARCHAR (200) NOT NULL,
     url VARCHAR (200),
     ip VARCHAR (64),
@@ -56,7 +57,7 @@ CREATE TABLE t_comments (
     content TEXT NOT NULL,
     comment_type VARCHAR (16),
     status VARCHAR (16),
-    parent_id INTEGER (10) DEFAULT (0)
+    parent_id INTEGER (10) DEFAULT 0
 );
 
 DROP TABLE IF EXISTS t_logs;
@@ -76,8 +77,8 @@ CREATE TABLE t_metas (
     slug VARCHAR (200),
     metas_type VARCHAR (32) NOT NULL,
     description VARCHAR (255),
-    sort INTEGER (4) DEFAULT (0),
-    parent_id INTEGER (10) DEFAULT (0)
+    sort INTEGER (4) DEFAULT 0,
+    parent_id INTEGER (10) DEFAULT 0
 );
 
 DROP TABLE IF EXISTS t_options;

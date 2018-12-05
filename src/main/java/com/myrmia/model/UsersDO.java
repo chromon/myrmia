@@ -16,6 +16,8 @@ public class UsersDO {
 
     private String password;
 
+    private String salt;
+
     private String email;
 
     private String homeURL;
@@ -57,6 +59,15 @@ public class UsersDO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Column(name = "salt", nullable = false, length = 128, columnDefinition = "varchar(128)")
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     @Column(name="email", length = 100, columnDefinition = "varchar(100)")

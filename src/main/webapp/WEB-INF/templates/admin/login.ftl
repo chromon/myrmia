@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>login</title>
     <!-- Bootstrap Core CSS -->
     <#include "inc/css.ftl">
 
@@ -31,29 +31,26 @@
                 <div class="col-lg-4">
                     <div class="login-content card">
                         <div class="login-form">
-                            <h4>Login</h4>
+                            <h4>登录 </h4>
                             <form>
                                 <div class="form-group">
-                                    <label>Email address</label>
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <label>账号</label>
+                                    <input type="email" class="form-control" placeholder="请输入账号 :)">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <label>密码</label>
+                                    <input type="password" class="form-control" placeholder="请输入密码">
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> Remember Me
+                                        <input type="checkbox"> 记住我
                                     </label>
                                     <label class="pull-right">
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="#">忘记密码？</a>
                                     </label>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
-                                <div class="register-link m-t-15 text-center">
-                                    <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
-                                </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">登录</button>
                             </form>
                         </div>
                     </div>

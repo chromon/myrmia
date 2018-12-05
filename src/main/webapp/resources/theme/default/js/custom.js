@@ -27,7 +27,7 @@ $('#install_submit').on('click', function () {
         type: "POST",
         url: basePath + '/save_install_info',
         data: data,
-        dataType: "json",
+        dataType: "text",
         success: function(data) {
             console.log(data);
 

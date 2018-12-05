@@ -24,6 +24,16 @@ public class OptionsServiceImpl implements OptionsService {
         this.optionsDAO.addOptions(optionsDO);
     }
 
+    /**
+     * 由选项名称查询详细信息
+     * @param optionsName 选项名称
+     * @return 详细信息
+     */
+    @Override
+    public OptionsDO queryOptionsByName(String optionsName) {
+        return this.optionsDAO.queryOptionsByName(optionsName);
+    }
+
     @Autowired
     public void setOptionsDAO(OptionsDAO optionsDAO) {
         this.optionsDAO = optionsDAO;

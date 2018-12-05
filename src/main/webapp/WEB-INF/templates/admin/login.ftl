@@ -10,18 +10,15 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>login</title>
+    <title>登录 - ${siteTitle}</title>
     <!-- Bootstrap Core CSS -->
     <#include "inc/css.ftl">
 
 </head>
 
 <body class="fix-header fix-sidebar">
-<!-- Preloader - style you can find in spinners.css -->
-<div class="preloader">
-    <svg class="circular" viewBox="25 25 50 50">
-        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-</div>
+<#include "inc/preloader.ftl">
+
 <!-- Main wrapper  -->
 <div id="main-wrapper">
 
@@ -31,15 +28,15 @@
                 <div class="col-lg-4">
                     <div class="login-content card">
                         <div class="login-form">
-                            <h4>登录 </h4>
+                            <h4>登录 ${siteTitle}</h4>
                             <form>
                                 <div class="form-group">
                                     <label>账号</label>
-                                    <input type="email" class="form-control" placeholder="请输入账号 :)">
+                                    <input type="text" name="adminName" class="form-control" placeholder="请输入账号 :)">
                                 </div>
                                 <div class="form-group">
                                     <label>密码</label>
-                                    <input type="password" class="form-control" placeholder="请输入密码">
+                                    <input type="password" name="adminPwd" class="form-control" placeholder="请输入密码">
                                 </div>
                                 <div class="checkbox">
                                     <label>

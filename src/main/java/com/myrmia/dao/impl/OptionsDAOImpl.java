@@ -4,6 +4,7 @@ import com.myrmia.dao.OptionsDAO;
 import com.myrmia.model.OptionsDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
  * Created by Ellery on 2018/12/4.
  */
 @Repository
-public class OptionsDAOImpl implements OptionsDAO{
+public class OptionsDAOImpl implements OptionsDAO {
 
     @Resource
     private SessionFactory sessionFactory;
@@ -29,5 +30,18 @@ public class OptionsDAOImpl implements OptionsDAO{
     @Override
     public void addOptions(OptionsDO optionsDO) {
         this.getSession().save(optionsDO);
+    }
+
+    /**
+     * 由选项名称查询详细信息
+     * @param optionsName 选项名称
+     * @return 详细信息
+     */
+    @Override
+    public OptionsDO queryOptionsByName(String optionsName) {
+        String sql = "from OptionsDO o where o.optionsName =:optionsName";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("optionsName", optionsName);
+        return (OptionsDO) query.uniqueResult();
     }
 }

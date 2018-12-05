@@ -61,7 +61,7 @@
                                required class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" id="adminPwd" name="adminPwd" placeholder="* 管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员密码'"
+                        <input type="password" id="adminPwd" name="adminPwd" placeholder="* 管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员密码'"
                                required aria-required="true" rangelength="[6,14]" class="single-input">
                     </div>
                     <div class="mt-10">

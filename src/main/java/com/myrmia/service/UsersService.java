@@ -13,4 +13,11 @@ public interface UsersService {
      * @param usersDO 用户信息
      */
     void saveUsers(UsersDO usersDO);
+
+    /**
+     * 由用户名查询用户信息
+     * @param username 用户名
+     * @return 用户信息
+     */
+    UsersDO queryUsersByName(String username);
 }

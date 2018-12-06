@@ -44,3 +44,8 @@ $('#install_submit').on('click', function () {
         }
     });
 });
+
+// 登录
+$('#loginBtn').on('click', function () {
+    $('#loginForm').submit();
+});

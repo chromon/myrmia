@@ -23,6 +23,16 @@ public class UsersServiceImpl implements UsersService {
         this.usersDAO.addUsers(usersDO);
     }
 
+    /**
+     * 由用户名查询用户信息
+     * @param username 用户名
+     * @return 用户信息
+     */
+    @Override
+    public UsersDO queryUsersByName(String username) {
+        return this.usersDAO.queryUsersByName(username);
+    }
+
     @Autowired
     public void setUsersDAO(UsersDAO usersDAO) {
         this.usersDAO = usersDAO;

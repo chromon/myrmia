@@ -29,14 +29,17 @@
                     <div class="login-content card">
                         <div class="login-form">
                             <h4>登录 ${siteTitle}</h4>
-                            <form>
+                            <form id="loginForm" action="/admin/do_login" method="post">
+                                <div class="form-group login-error-bottom">
+                                    <label class="login-error">用户名或密码不正确</label>
+                                </div>
                                 <div class="form-group">
                                     <label>账号</label>
-                                    <input type="text" name="adminName" class="form-control" placeholder="请输入账号 :)">
+                                    <input type="text" id="adminUser" name="adminUser" class="form-control" placeholder="请输入账号 :)">
                                 </div>
                                 <div class="form-group">
                                     <label>密码</label>
-                                    <input type="password" name="adminPwd" class="form-control" placeholder="请输入密码">
+                                    <input type="password" id="adminPwd" name="adminPwd" class="form-control" placeholder="请输入密码">
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -47,7 +50,7 @@
                                     </label>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">登录</button>
+                                <button type="submit" id="loginBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">登录</button>
                             </form>
                         </div>
                     </div>

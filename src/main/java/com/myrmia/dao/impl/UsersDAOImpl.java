@@ -4,6 +4,7 @@ import com.myrmia.dao.UsersDAO;
 import com.myrmia.model.UsersDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -29,5 +30,18 @@ public class UsersDAOImpl implements UsersDAO {
      */
     public void addUsers(UsersDO usersDO) {
         this.getSession().save(usersDO);
+    }
+
+    /**
+     * 由用户名查询用户信息
+     * @param username 用户名
+     * @return 用户信息
+     */
+    @Override
+    public UsersDO queryUsersByName(String username) {
+        String sql = "from UsersDO u where u.username =:username";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("username", username);
+        return (UsersDO) query.uniqueResult();
     }
 }

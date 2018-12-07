@@ -31,7 +31,11 @@
                             <h4>登录 ${siteTitle}</h4>
                             <form id="loginForm" action="/admin/do_login" method="post">
                                 <div class="form-group login-error-bottom">
-                                    <label class="login-error">用户名或密码不正确</label>
+                                    <label class="login-error" id="login_error">
+                                        <#if (errorInfo)??>
+                                            ${errorInfo}
+                                        </#if>
+                                    </label>
                                 </div>
                                 <div class="form-group">
                                     <label>账号</label>
@@ -43,7 +47,7 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> 记住我
+                                        <input type="checkbox" id="rememberMe" name="rememberMe"> 记住我
                                     </label>
                                     <label class="pull-right">
                                         <a href="#">忘记密码？</a>

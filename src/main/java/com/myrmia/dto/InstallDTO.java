@@ -16,6 +16,8 @@ public class InstallDTO {
 
     private String adminPwd;
 
+    private String rememberMe;
+
     public String getSiteTitle() {
         return siteTitle;
     }
@@ -54,5 +56,13 @@ public class InstallDTO {
 
     public void setAdminPwd(String adminPwd) {
         this.adminPwd = adminPwd;
+    }
+
+    public String getRememberMe() {
+        return rememberMe;
+    }
+
+    public void setRememberMe(String rememberMe) {
+        this.rememberMe = rememberMe;
     }
 }

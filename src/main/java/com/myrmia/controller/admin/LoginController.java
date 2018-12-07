@@ -42,13 +42,9 @@ public class LoginController {
     @RequestMapping(value="/do_login", method = RequestMethod.POST)
     public String doLogin(@ModelAttribute InstallDTO installDTO, Model model) {
 
-        System.out.println(installDTO.getAdminUser());
-
         // 校验用户信息
         UsersDO usersDO = usersService.queryUsersByName(installDTO.getAdminUser());
 
-        System.out.println(usersDO.getUsername());
-        System.out.println(installDTO.getAdminPwd());
         if (usersDO != null) {
             String signInPassword = installDTO.getAdminPwd();
 
@@ -56,18 +52,23 @@ public class LoginController {
             String password = passwordUtils.checkPassword(salt, signInPassword);
             if (password.equals(usersDO.getPassword())) {
                 // 用户名密码正确
-                return "admin/index";
-            } else {
-                // 用户名正确，密码不正确
 
+                // 保持 cookie
+                if (installDTO.getRememberMe() != null) {
+                    System.out.println("rememberMe == true");
+                }
+
+                // admin 首页信息
+
+                return "admin/index";
             }
-        } else {
-            // 用户名不存在
         }
 
         // 查询网址名称
         OptionsDO optionsDO = optionsService.queryOptionsByName("siteTitle");
         model.addAttribute("siteTitle", optionsDO.getOptionsValue());
+        // 错误信息
+        model.addAttribute("errorInfo", "用户名或密码错误");
 
         return "admin/login";
     }

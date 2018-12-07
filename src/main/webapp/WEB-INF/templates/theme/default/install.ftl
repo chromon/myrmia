@@ -54,7 +54,7 @@
                     </div>
                     <div class="mt-10">
                         <input type="text" id="adminUser" name="adminUser" placeholder="* 管理员账号" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员账号'"
-                               required aria-required="true" rangelength="[4,20]" class="single-input">
+                               required aria-required="true" rangelength="[6,20]" class="single-input">
                     </div>
                     <div class="mt-10">
                         <input type="email" id="adminEmail" name="adminEmail" placeholder="* 管理员邮箱" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员邮箱'"
@@ -62,7 +62,7 @@
                     </div>
                     <div class="mt-10">
                         <input type="password" id="adminPwd" name="adminPwd" placeholder="* 管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 管理员密码'"
-                               required aria-required="true" rangelength="[6,14]" class="single-input">
+                               required aria-required="true" rangelength="[6,20]" class="single-input">
                     </div>
                     <div class="mt-10">
                         <input type="password" id="adminPwdConfirm" name="adminPwdConfirm" placeholder="* 确认管理员密码" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 确认管理员密码'"

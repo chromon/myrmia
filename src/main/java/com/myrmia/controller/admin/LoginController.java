@@ -5,6 +5,7 @@ import com.myrmia.model.OptionsDO;
 import com.myrmia.model.UsersDO;
 import com.myrmia.service.OptionsService;
 import com.myrmia.service.UsersService;
+import com.myrmia.utils.cookie.CookieUtils;
 import com.myrmia.utils.security.PasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * admin login controller
@@ -29,6 +32,9 @@ public class LoginController {
     @Resource
     private PasswordUtils passwordUtils;
 
+    @Resource
+    private CookieUtils cookieUtils;
+
     @RequestMapping(value="/login", method = RequestMethod.GET)
     public String login(Model model) {
 
@@ -40,7 +46,8 @@ public class LoginController {
     }
 
     @RequestMapping(value="/do_login", method = RequestMethod.POST)
-    public String doLogin(@ModelAttribute InstallDTO installDTO, Model model) {
+    public String doLogin(HttpServletRequest request, HttpServletResponse response,
+                          @ModelAttribute InstallDTO installDTO, Model model) {
 
         // 校验用户信息
         UsersDO usersDO = usersService.queryUsersByName(installDTO.getAdminUser());
@@ -53,12 +60,20 @@ public class LoginController {
             if (password.equals(usersDO.getPassword())) {
                 // 用户名密码正确
 
-                // 保持 cookie
+                // 保存 cookie
                 if (installDTO.getRememberMe() != null) {
                     System.out.println("rememberMe == true");
+                    int maxAge = 30 * 24 * 60 * 60;
+                    cookieUtils.addCookie(response,
+                            cookieUtils.getEncryptName("MyrmiaCookieName"),
+                            usersDO.getUsername(), maxAge);
+                    cookieUtils.addCookie(response,
+                            cookieUtils.getEncryptName("MyrmiaCookiePass"),
+                            cookieUtils.getEncryptValue(usersDO.getPassword()), maxAge);
                 }
 
                 // admin 首页信息
+                request.getSession(true).setAttribute("usersDO", usersDO);
 
                 return "admin/index";
             }

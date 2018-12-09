@@ -9,7 +9,7 @@ function checkAdminUser() {
     let errorText = $('#login_error');
     let reg = /^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/;
     if (!reg.test(adminUser)) {
-        errorText.text('请输入5-20位的密码');
+        errorText.text('请输入5-20位的用户名');
         return false;
     }
     errorText.text('');

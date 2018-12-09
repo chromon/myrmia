@@ -44,6 +44,9 @@
             <div class="single-testimonial item" id="site_setting">
                 <h4 class="install-setting">网站设置</h4>
                 <form action="#">
+                    <div class="mt-10 install-right">
+                        <span class="install-error" id="install_error"></span>
+                    </div>
                     <div class="mt-10">
                         <input type="text" id="siteTitle" name="siteTitle" placeholder="* 网站名称" onfocus="this.placeholder = ''" onblur="this.placeholder = '* 网站名称'"
                                required aria-required="true" maxlength="100" class="single-input">
@@ -69,7 +72,6 @@
                                required equalTo="#adminPwd" class="single-input">
                     </div>
                     <div class="button-group-area install-setting-btn">
-                        <a href="javascript:void(0);" class="genric-btn default radius">取消</a>
                         <a href="javascript:void(0);" id="install_submit" class="genric-btn primary radius">安装</a>
                     </div>
                 </form>

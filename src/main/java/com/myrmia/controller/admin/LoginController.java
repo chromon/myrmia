@@ -62,7 +62,6 @@ public class LoginController {
 
                 // 保存 cookie
                 if (installDTO.getRememberMe() != null) {
-                    System.out.println("rememberMe == true");
                     int maxAge = 30 * 24 * 60 * 60;
                     cookieUtils.addCookie(response,
                             cookieUtils.getEncryptName("MyrmiaCookieName"),
@@ -75,7 +74,7 @@ public class LoginController {
                 // admin 首页信息
                 request.getSession(true).setAttribute("usersDO", usersDO);
 
-                return "admin/index";
+                return "redirect:/admin/index";
             }
         }
 

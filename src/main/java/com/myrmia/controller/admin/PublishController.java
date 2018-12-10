@@ -15,6 +15,7 @@ public class PublishController {
 
     @RequestMapping(value="/publish", method = RequestMethod.GET)
     public String test(Model model) {
+        model.addAttribute("active", "publish");
         return "admin/publish";
     }
 }

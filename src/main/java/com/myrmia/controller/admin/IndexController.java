@@ -15,6 +15,8 @@ public class IndexController {
 
     @RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
     public String test(Model model) {
+
+        model.addAttribute("active", "home");
         return "admin/index";
     }
 }

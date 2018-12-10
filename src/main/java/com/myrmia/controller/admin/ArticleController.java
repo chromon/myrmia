@@ -15,6 +15,8 @@ public class ArticleController {
 
     @RequestMapping(value="/article", method = RequestMethod.GET)
     public String test(Model model) {
+
+        model.addAttribute("active", "article");
         return "admin/article";
     }
 }

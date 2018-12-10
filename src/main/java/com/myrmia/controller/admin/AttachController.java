@@ -15,6 +15,8 @@ public class AttachController {
 
     @RequestMapping(value="/attach", method = RequestMethod.GET)
     public String test(Model model) {
+
+        model.addAttribute("active", "attach");
         return "admin/attach";
     }
 }

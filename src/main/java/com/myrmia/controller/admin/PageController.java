@@ -15,6 +15,8 @@ public class PageController {
 
     @RequestMapping(value="/page", method = RequestMethod.GET)
     public String test(Model model) {
+
+        model.addAttribute("active", "page");
         return "admin/page";
     }
 }

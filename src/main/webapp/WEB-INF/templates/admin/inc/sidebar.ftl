@@ -8,8 +8,8 @@
             <ul id="sidebarnav">
                 <li class="nav-devider"></li>
                 <li class="nav-label">仪表盘</li>
-                <li>
-                    <a href="#" aria-expanded="false">
+                <li <#if active ?? && active == "home">class="active"</#if>>
+                    <a href="/admin/index" aria-expanded="false">
                         <i class="fa fa-home"></i>
                         <span class="hide-menu">
                             主页
@@ -17,16 +17,16 @@
                     </a>
                 </li>
                 <li class="nav-label">文章</li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "publish">class="active"</#if>>
+                    <a class="" href="/admin/publish" aria-expanded="false">
                         <i class="fa fa-pencil"></i>
                         <span class="hide-menu">
                             发布文章
                         </span>
                     </a>
                 </li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "article">class="active"</#if>>
+                    <a class="" href="/admin/article" aria-expanded="false">
                         <i class="fa fa-list"></i>
                         <span class="hide-menu">
                             文章管理
@@ -34,8 +34,8 @@
                     </a>
                 </li>
                 <li class="nav-label">页面</li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "page">class="active"</#if>>
+                    <a class="" href="/admin/page" aria-expanded="false">
                         <i class="fa fa-plus-square-o"></i>
                         <span class="hide-menu">
                             页面管理
@@ -52,8 +52,8 @@
                     </a>
                 </li>
                 <li class="nav-label">文件</li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "attach">class="active"</#if>>
+                    <a class="" href="/admin/attach" aria-expanded="false">
                         <i class="fa fa-cloud-upload"></i>
                         <span class="hide-menu">
                             文件管理
@@ -61,8 +61,8 @@
                     </a>
                 </li>
                 <li class="nav-label">关联</li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "links">class="active"</#if>>
+                    <a class="" href="/admin/links" aria-expanded="false">
                         <i class="fa fa-link"></i>
                         <span class="hide-menu">
                             友链管理
@@ -70,8 +70,8 @@
                     </a>
                 </li>
                 <li class="nav-label">设置</li>
-                <li>
-                    <a class="" href="#" aria-expanded="false">
+                <li <#if active ?? && active == "setting">class="active"</#if>>
+                    <a class="" href="/admin/setting" aria-expanded="false">
                         <i class="fa fa-cog"></i>
                         <span class="hide-menu">
                             系统设置

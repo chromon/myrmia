@@ -15,6 +15,7 @@ public class LinksController {
 
     @RequestMapping(value="/links", method = RequestMethod.GET)
     public String test(Model model) {
+        model.addAttribute("active", "links");
         return "admin/links";
     }
 }

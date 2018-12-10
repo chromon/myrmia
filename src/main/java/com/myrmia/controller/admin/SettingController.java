@@ -15,6 +15,8 @@ public class SettingController {
 
     @RequestMapping(value="/setting", method = RequestMethod.GET)
     public String test(Model model) {
+
+        model.addAttribute("active", "setting");
         return "admin/setting";
     }
 }

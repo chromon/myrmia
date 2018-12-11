@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Enumeration;
 
 /**
  * admin login controller
@@ -85,6 +86,23 @@ public class LoginController {
         model.addAttribute("errorInfo", "用户名或密码错误");
 
         return "admin/login";
+    }
+
+    @RequestMapping(value="/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request,
+                         HttpServletResponse response, Model model) {
+        // 清空 session
+        Enumeration<String> em = request.getSession().getAttributeNames();
+        while (em.hasMoreElements()) {
+            request.getSession().removeAttribute(em.nextElement());
+        }
+        request.getSession().invalidate();
+
+        // 清空 cookie
+        cookieUtils.removeCookie(response, cookieUtils.getEncryptName("MyrmiaCookieName"));
+        cookieUtils.removeCookie(response, cookieUtils.getEncryptName("MyrmiaCookiePass"));
+
+        return "redirect:/admin/login";
     }
 
     @Autowired

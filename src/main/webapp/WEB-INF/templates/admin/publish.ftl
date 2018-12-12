@@ -42,7 +42,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
 
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">发布文章</li>
                 </ol>
             </div>
         </div>
@@ -70,16 +70,36 @@
                                         <div class="col-lg-5">
                                             <input type="text" class="custom-article-info form-control" placeholder="文章标签">
                                         </div>
+                                        <#--<div class="col-lg-5">-->
+                                            <#--<input type="text" class="custom-article-info form-control" placeholder="文章分类">-->
+                                        <#--</div>-->
                                         <div class="col-lg-5">
-                                            <input type="text" class="custom-article-info form-control" placeholder="文章分类">
+                                            <select class="form-control publish-select">
+                                                <option>请选择分类</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <div id="summernote">Hello Summernote</div>
+                                        <div id="summernote"></div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <button type="submit" class="btn btn-primary btn-sm">保存文章</button>
-                                        <button type="submit" class="btn btn-success btn-sm">存为草稿</button>
+                                        <button type="submit" class="btn btn-primary">保存文章</button>
+                                        <button type="submit" class="btn btn-success">存为草稿</button>
+                                        <div class="checkbox publish-checkbox">
+                                            <label>
+                                                <input type="checkbox" id="allowComment"> 开启评论
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" id="allowPing"> 允许 Ping
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" id="allowFeed"> 允许订阅
+                                            </label>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -101,15 +121,6 @@
 <#include "inc/js.ftl">
 <!-- end js -->
 
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            lang: 'zh-CN',
-            height: 340,
-            placeholder: '写点儿什么吧...',
-        });
-    });
-</script>
 </body>
 
 </html>

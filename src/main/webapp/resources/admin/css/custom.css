@@ -9,3 +9,17 @@
 .login-error-bottom {
     margin-bottom: 10px;
 }
+
+.publish-checkbox {
+    padding-left: 15px;
+    padding-right: 15px;
+    float: right;
+}
+
+.publish-checkbox label {
+    margin-left: 20px;
+}
+
+.publish-select {
+    width: 100% !important;
+}

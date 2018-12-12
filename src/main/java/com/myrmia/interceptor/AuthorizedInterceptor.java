@@ -45,7 +45,7 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
                 String tempPwd = cookieUtils.getEncryptValue(usersDO.getPassword());
                 if (adminPwdEncrypted.equals(tempPwd)) {
                     // cookie 正确
-                    System.out.println("auto login.");
+                    System.out.println("[info] auto login.");
                     request.getSession(true).setAttribute("usersDO", usersDO);
                 }
             }

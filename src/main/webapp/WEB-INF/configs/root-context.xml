@@ -101,6 +101,20 @@
         <property name="requestContextAttribute" value="request" />
     </bean>
 
+    <!-- 多部分文件上传 -->
+    <!--
+        property 一共有4个属性
+     	maxUploadSize 上传的最大字节数，-1代表没有任何限制
+     	maxInMemorySize 读取文件到内存中最大的字节数，默认是1024
+     	defaultEncoding 文件上传头部编码，默认是iso-8859-1，注意 defaultEncoding 必须和用户的jsp的pageEncoding属性一致，以便能正常读取文件
+     	uploadTempDir 文件上传暂存目录，文件上传完成之后会清除该目录，模式是在servlet容器的临时目录，例如tomcat的话，就是在tomcat文件夹的temp目录
+    -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="104857600" />
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+
     <!-- 拦截器 -->
     <mvc:interceptors>
 

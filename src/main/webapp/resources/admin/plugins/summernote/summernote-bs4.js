@@ -7203,7 +7203,8 @@ $$1.summernote = $$1.extend($$1.summernote, {
             onKeyup: null,
             onKeydown: null,
             onImageUpload: null,
-            onImageUploadError: null
+            onImageUploadError: null,
+            onMediaDelete: null
         },
         codemirror: {
             mode: 'text/html',

@@ -1,7 +1,12 @@
 package com.myrmia.controller.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.myrmia.model.AttachDO;
+import com.myrmia.model.UsersDO;
+import com.myrmia.service.AttachService;
+import com.myrmia.utils.date.DateUtils;
 import com.myrmia.utils.file.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +17,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -21,6 +27,8 @@ import java.util.UUID;
 @Controller("adminPublishController")
 @RequestMapping("/admin")
 public class PublishController {
+
+    private AttachService attachService;
 
     @RequestMapping(value="/publish", method = RequestMethod.GET)
     public String test(Model model) {
@@ -39,6 +47,7 @@ public class PublishController {
     public Object uploadImage(@RequestParam("file") CommonsMultipartFile file, HttpServletRequest request) {
 
         File destFile;
+        UsersDO usersDO = (UsersDO) request.getSession(true).getAttribute("usersDO");
 
         if (!file.isEmpty()) {
             try {
@@ -50,9 +59,18 @@ public class PublishController {
 
                 file.transferTo(destFile);
 
+                // 保存附件信息
+                AttachDO attachDO = new AttachDO();
+                attachDO.setFileName(fileName);
+                attachDO.setFileKey(File.separator + "resources"+ File.separator + "upload" + File.separator + fileName);
+                attachDO.setFileType("image");
+                attachDO.setAuthorId(usersDO.getUid());
+                attachDO.setCreated(new Date().getTime());
+                attachService.saveAttach(attachDO);
+
                 // json 格式化
                 ObjectMapper mapper = new ObjectMapper();
-                System.out.println(File.separator + "upload" + File.separator + fileName);
+                // System.out.println(File.separator + "upload" + File.separator + fileName);
                 return mapper.writeValueAsString(File.separator + "resources"+ File.separator + "upload" + File.separator + fileName);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -65,7 +83,7 @@ public class PublishController {
      * 删除图片
      * @param imgSrc 图片路径
      * @param request http servlet request
-     * @return
+     * @return boolean
      */
     @RequestMapping(value = "/imgDelete", method = RequestMethod.POST)
     @ResponseBody
@@ -77,10 +95,22 @@ public class PublishController {
         File file = new File(path + File.separator + fileName);
 
         if (file.exists() && file.isFile()) {
+
+            // 删除附件信息
+            AttachDO attachDO = attachService.queryAttachByFileName(fileName);
+            if (attachDO != null) {
+                attachService.deleteAttach(attachDO);
+            }
+
             file.delete();
             return true;
         }
 
         return false;
+    }
+
+    @Autowired
+    public void setAttachService(AttachService attachService) {
+        this.attachService = attachService;
     }
 }

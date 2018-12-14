@@ -70,7 +70,7 @@ function uploadFile(file, editor, welEditable) {
         processData: false,
         dataType: 'json',
         success: function(imageUrl) {
-            console.log('1--'+ imageUrl);
+            // console.log('1--'+ imageUrl);
             $('#summernote').summernote('editor.insertImage', imageUrl);
         },
         error: function(jqXHR, textStatus, errorThrown) {

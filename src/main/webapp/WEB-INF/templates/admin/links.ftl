@@ -42,7 +42,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
 
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">友链管理</li>
                 </ol>
             </div>
         </div>
@@ -50,6 +50,18 @@
         <!-- Container fluid  -->
         <div class="container-fluid">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="form-group form-inline">
+                            <input type="text" class="form-control links-right" placeholder="友链标题">
+                            <input type="text" class="form-control links-right" placeholder="友链链接">
+                            <input type="text" class="form-control links-right" placeholder="友链LOGO">
+                            <input type="text" class="form-control links-right" placeholder="友链排序">
+
+                            <button type="submit" class="btn btn-primary">保存友链</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-title">

@@ -2357,7 +2357,7 @@ textarea {
 .modal-header .close {
   font-size: 14px;
   margin-right: 15px;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
 }
 .modal-content {
   border-radius: 3px;

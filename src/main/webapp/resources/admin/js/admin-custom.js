@@ -113,3 +113,60 @@ function deleteFile(target) {
         }
     });
 }
+
+// 保存分类
+$('#categorySubmit').on('click', function() {
+    let metasName = $('#metasName').val();
+    let data = {
+        metasName: metasName
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/addCategory',
+        cache: false,
+        success: function (data) {
+            console.log(data);
+
+            let html = template("category_template", {metasDO:data});
+            $("#category_body").append(html);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+});
+
+// 删除分类
+function deleteCategory(mid) {
+    let data = {
+        mid: mid
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/deleteCategory',
+        cache: false,
+        success: function (data) {
+            console.log(data);
+            $('#category-' + mid).addClass('hide');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}

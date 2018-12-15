@@ -18,4 +18,6 @@
 
 <script src="/resources/admin/plugins/summernote/summernote-bs4.js"></script>
 
+<script src="/resources/admin/plugins/art-template/template-web.js"></script>
+
 <script src="/resources/admin/js/admin-custom.js"></script>

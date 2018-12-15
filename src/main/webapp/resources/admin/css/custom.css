@@ -23,3 +23,11 @@
 .publish-select {
     width: 100% !important;
 }
+
+.links-right {
+    margin-right: 20px;
+}
+
+.category-inline {
+    display: inline;
+}

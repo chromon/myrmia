@@ -2,8 +2,10 @@ package com.myrmia.controller.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myrmia.model.AttachDO;
+import com.myrmia.model.MetasDO;
 import com.myrmia.model.UsersDO;
 import com.myrmia.service.AttachService;
+import com.myrmia.service.MetasService;
 import com.myrmia.utils.date.DateUtils;
 import com.myrmia.utils.file.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,10 +32,16 @@ import java.util.UUID;
 public class PublishController {
 
     private AttachService attachService;
+    private MetasService metasService;
 
     @RequestMapping(value="/publish", method = RequestMethod.GET)
     public String test(Model model) {
         model.addAttribute("active", "publish");
+
+        // 查询分类列表
+        List<MetasDO> categoryList = metasService.queryMetasByType("category");
+        model.addAttribute("categoryList", categoryList);
+
         return "admin/publish";
     }
 
@@ -112,5 +121,10 @@ public class PublishController {
     @Autowired
     public void setAttachService(AttachService attachService) {
         this.attachService = attachService;
+    }
+
+    @Autowired
+    public void setMetasService(MetasService metasService) {
+        this.metasService = metasService;
     }
 }

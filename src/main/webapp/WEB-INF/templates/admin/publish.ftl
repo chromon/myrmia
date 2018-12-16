@@ -40,7 +40,7 @@
                 <h3 class="text-primary">Dashboard</h3> </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">主页</a></li>
 
                     <li class="breadcrumb-item active">发布文章</li>
                 </ol>
@@ -76,10 +76,9 @@
                                         <div class="col-lg-5">
                                             <select class="form-control publish-select">
                                                 <option>请选择分类</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                                <#list categoryList as category>
+                                                <option>${category.name}</option>
+                                                </#list>
                                             </select>
                                         </div>
                                     </div>

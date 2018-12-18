@@ -4,9 +4,11 @@ import com.myrmia.dao.ContentsDAO;
 import com.myrmia.model.ContentsDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * contents dao impl
@@ -22,8 +24,41 @@ public class ContentsDAOImpl implements ContentsDAO {
         return sessionFactory.getCurrentSession();
     }
 
+    /**
+     * 添加文章
+     * @param contentsDO 文章内容
+     */
     @Override
     public void addContents(ContentsDO contentsDO) {
         this.getSession().save(contentsDO);
+    }
+
+    /**
+     * 查询全部文章
+     * @return 文章列表
+     */
+    @Override
+    public List<ContentsDO> queryContents() {
+        String sql = "from ContentsDO";
+        Query query = this.getSession().createQuery(sql);
+        return query.list();
+    }
+
+    /**
+     * 更新文章
+     * @param contentsDO 文章内容
+     */
+    @Override
+    public void updateContents(ContentsDO contentsDO) {
+        this.getSession().update(contentsDO);
+    }
+
+    /**
+     * 删除文章
+     * @param contentsDO 文章内容
+     */
+    @Override
+    public void deleteContents(ContentsDO contentsDO) {
+        this.getSession().delete(contentsDO);
     }
 }

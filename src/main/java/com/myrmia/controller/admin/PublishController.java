@@ -1,6 +1,7 @@
 package com.myrmia.controller.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.myrmia.dto.ArticleDTO;
 import com.myrmia.model.AttachDO;
 import com.myrmia.model.MetasDO;
 import com.myrmia.model.UsersDO;
@@ -11,10 +12,7 @@ import com.myrmia.utils.file.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -116,6 +114,14 @@ public class PublishController {
         }
 
         return false;
+    }
+
+    @RequestMapping(value = "/postArticle", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean postArticle(@ModelAttribute ArticleDTO articleDTO, HttpServletRequest request) {
+
+
+        return true;
     }
 
     @Autowired

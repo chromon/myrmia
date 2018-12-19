@@ -60,24 +60,21 @@
                                 <form>
                                     <div class="form-group form-inline">
                                         <div class="col-lg-5">
-                                            <input type="text" class="custom-article-info form-control" placeholder="请输入文章标题（必须）">
+                                            <input type="text" id="articleTitle" class="custom-article-info form-control" placeholder="请输入文章标题（必须）">
                                         </div>
                                         <div class="col-lg-5">
-                                            <input type="text" class="custom-article-info form-control" placeholder="自定义文章访问路径，如：my-first-article，默认为文章 id">
+                                            <input type="text" id="articleSlug" class="custom-article-info form-control" placeholder="自定义文章访问路径，如：my-first-article，默认为文章 id">
                                         </div>
                                     </div>
                                     <div class="form-group form-inline">
                                         <div class="col-lg-5">
-                                            <input type="text" class="custom-article-info form-control" placeholder="文章标签">
+                                            <input type="text" id="articleTags" class="custom-article-info form-control" placeholder="文章标签">
                                         </div>
-                                        <#--<div class="col-lg-5">-->
-                                            <#--<input type="text" class="custom-article-info form-control" placeholder="文章分类">-->
-                                        <#--</div>-->
                                         <div class="col-lg-5">
-                                            <select class="form-control publish-select">
+                                            <select id="articleCategory" class="form-control publish-select">
                                                 <option>请选择分类</option>
                                                 <#list categoryList as category>
-                                                <option>${category.name}</option>
+                                                <option value="${category.mid}">${category.name}</option>
                                                 </#list>
                                             </select>
                                         </div>
@@ -86,8 +83,8 @@
                                         <div id="summernote"></div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <button type="submit" class="btn btn-primary">保存文章</button>
-                                        <button type="submit" class="btn btn-success">存为草稿</button>
+                                        <button type="button" id="articlePublish" class="btn btn-primary">保存文章</button>
+                                        <button type="button" id="articleDraft" class="btn btn-success">存为草稿</button>
                                         <div class="checkbox publish-checkbox">
                                             <label>
                                                 <input type="checkbox" id="allowComment"> 开启评论

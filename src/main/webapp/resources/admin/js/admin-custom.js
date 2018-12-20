@@ -201,7 +201,10 @@ $('#articlePublish').on('click', function() {
         url: basePath + '/admin/postArticle',
         cache: false,
         success: function (data) {
-            console.log(data);
+            // console.log(data);
+            if (data) {
+                window.location.href = "/admin/page";
+            }
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log('responseText: ' + jqXHR.responseText);

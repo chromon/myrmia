@@ -20,7 +20,7 @@ public class LogsDO {
 
     private String ip;
 
-    private int created;
+    private long created;
 
     @Id
     @Column(name = "id", nullable = false, unique = true)
@@ -69,12 +69,12 @@ public class LogsDO {
         this.ip = ip;
     }
 
-    @Column(name = "created", nullable = false, columnDefinition = "integer(10)")
-    public int getCreated() {
+    @Column(name = "created", nullable = false, columnDefinition = "bigint")
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(int created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 }

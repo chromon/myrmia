@@ -24,7 +24,7 @@ public class UsersDO {
 
     private String screenName;
 
-    private int created;
+    private long created;
 
     private int activated;
 
@@ -97,12 +97,12 @@ public class UsersDO {
         this.screenName = screenName;
     }
 
-    @Column(name="created", nullable = false, columnDefinition = "int(10)")
-    public int getCreated() {
+    @Column(name="created", nullable = false, columnDefinition = "bigint")
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(int created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 

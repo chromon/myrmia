@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="col-lg-5">
                                             <select id="articleCategory" class="form-control publish-select">
-                                                <option>请选择分类</option>
+                                                <option value="0">请选择分类</option>
                                                 <#list categoryList as category>
                                                 <option value="${category.mid}">${category.name}</option>
                                                 </#list>
@@ -87,7 +87,7 @@
                                         <button type="button" id="articleDraft" class="btn btn-success">存为草稿</button>
                                         <div class="checkbox publish-checkbox">
                                             <label>
-                                                <input type="checkbox" id="allowComment"> 开启评论
+                                                <input type="checkbox" id="allowComment" checked> 开启评论
                                             </label>
                                             <label>
                                                 <input type="checkbox" id="allowPing"> 允许 Ping

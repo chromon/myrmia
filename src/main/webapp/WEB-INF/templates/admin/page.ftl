@@ -40,9 +40,9 @@
                 <h3 class="text-primary">Dashboard</h3> </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">主页</a></li>
 
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">页面管理</li>
                 </ol>
             </div>
         </div>
@@ -55,7 +55,6 @@
                         <div class="card-title">
                             <h4>页面管理</h4>
                         </div>
-                        <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6>
                         <div class="dt-buttons">
                             <a class="dt-button" href="#">
                                 <span>添加新页面</span>
@@ -67,94 +66,103 @@
                                     <thead>
                                     <tr>
                                         <th>页面名称</th>
-                                        <th>页面路径</th>
                                         <th>发布时间</th>
+                                        <th>浏览量</th>
+                                        <th>所属分类</th>
                                         <th>发布状态</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
+                                    <#list contentsDOList as content>
                                     <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>  January 22</span></td>
-                                        <td><span>453</span></td>
-                                        <td><span class="badge badge-success">5</span></td>
+                                        <td>${content.title}</td>
+                                        <td><span>${content.created}</span></td>
+                                        <td><span>${content.hits}</span></td>
+                                        <td><span>${content.categories}</span></td>
+                                        <#if content.status == "published">
+                                        <td><span class="badge badge-success">已发布</span></td>
+                                        <#else>
+                                            <#-- draft -->
+                                            <td><span class="badge badge-success">草稿</span></td>
+                                        </#if>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
                                                 <i class="fa fa-pencil"></i>
-                                                Default
+                                                编辑
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
+                                                删除
                                             </button>
                                             <button type="button" class="btn btn-success btn-sm">
                                                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
+                                                预览
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>  January 22</span></td>
-                                        <td><span>12</span></td>
-                                        <td><span class="badge badge-danger">0</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
-                                                <i class="fa fa-pencil"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>  January 22</span></td>
-                                        <td><span>786</span></td>
-                                        <td><span class="badge badge-primary">12</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
-                                                <i class="fa fa-pencil"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>  January 22</span></td>
-                                        <td><span>3452</span></td>
-                                        <td><span class="badge badge-warning">3</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
-                                                <i class="fa fa-pencil"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    </#list>
+                                    <#--<tr>-->
+                                        <#--<td>John Abraham</td>-->
+                                        <#--<td><span>  January 22</span></td>-->
+                                        <#--<td><span>12</span></td>-->
+                                        <#--<td><span class="badge badge-danger">0</span></td>-->
+                                        <#--<td>-->
+                                            <#--<button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">-->
+                                                <#--<i class="fa fa-pencil"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-danger btn-sm">-->
+                                                <#--<i class="fa fa-trash" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-success btn-sm">-->
+                                                <#--<i class="fa fa-paper-plane" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                        <#--</td>-->
+                                    <#--</tr>-->
+                                    <#--<tr>-->
+                                        <#--<td>John Abraham</td>-->
+                                        <#--<td><span>  January 22</span></td>-->
+                                        <#--<td><span>786</span></td>-->
+                                        <#--<td><span class="badge badge-primary">12</span></td>-->
+                                        <#--<td>-->
+                                            <#--<button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">-->
+                                                <#--<i class="fa fa-pencil"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-danger btn-sm">-->
+                                                <#--<i class="fa fa-trash" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-success btn-sm">-->
+                                                <#--<i class="fa fa-paper-plane" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                        <#--</td>-->
+                                    <#--</tr>-->
+                                    <#--<tr>-->
+                                        <#--<td>John Abraham</td>-->
+                                        <#--<td><span>  January 22</span></td>-->
+                                        <#--<td><span>3452</span></td>-->
+                                        <#--<td><span class="badge badge-warning">3</span></td>-->
+                                        <#--<td>-->
+                                            <#--<button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">-->
+                                                <#--<i class="fa fa-pencil"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-danger btn-sm">-->
+                                                <#--<i class="fa fa-trash" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                            <#--<button type="button" class="btn btn-success btn-sm">-->
+                                                <#--<i class="fa fa-paper-plane" aria-hidden="true"></i>-->
+                                                <#--Default-->
+                                            <#--</button>-->
+                                        <#--</td>-->
+                                    <#--</tr>-->
                                     </tbody>
                                 </table>
                             </div>

@@ -18,7 +18,7 @@ public class ContentsDO {
 
     private String thumbImg;
 
-    private int created;
+    private long created;
 
     private int modified;
 
@@ -84,12 +84,12 @@ public class ContentsDO {
         this.thumbImg = thumbImg;
     }
 
-    @Column(name = "created", nullable = false, columnDefinition = "integer(10)")
-    public int getCreated() {
+    @Column(name = "created", nullable = false, columnDefinition = "bigint")
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(int created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 

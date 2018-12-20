@@ -3,9 +3,11 @@ package com.myrmia.controller.admin;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myrmia.dto.ArticleDTO;
 import com.myrmia.model.AttachDO;
+import com.myrmia.model.ContentsDO;
 import com.myrmia.model.MetasDO;
 import com.myrmia.model.UsersDO;
 import com.myrmia.service.AttachService;
+import com.myrmia.service.ContentsService;
 import com.myrmia.service.MetasService;
 import com.myrmia.utils.date.DateUtils;
 import com.myrmia.utils.file.FileUtils;
@@ -31,6 +33,7 @@ public class PublishController {
 
     private AttachService attachService;
     private MetasService metasService;
+    private ContentsService contentsService;
 
     @RequestMapping(value="/publish", method = RequestMethod.GET)
     public String test(Model model) {
@@ -120,6 +123,36 @@ public class PublishController {
     @ResponseBody
     public boolean postArticle(@ModelAttribute ArticleDTO articleDTO, HttpServletRequest request) {
 
+        UsersDO usersDO = (UsersDO) request.getSession(true).getAttribute("usersDO");
+
+        // 保存内容
+        ContentsDO contentsDO = new ContentsDO();
+        contentsDO.setTitle(articleDTO.getArticleTitle());
+        contentsDO.setSlug(articleDTO.getArticleSlug());
+        contentsDO.setCreated(new Date().getTime());
+        contentsDO.setContent(articleDTO.getArticleContent());
+        contentsDO.setAuthorId(usersDO.getUid());
+        contentsDO.setFmtType("html");
+        contentsDO.setContentType("post");
+        contentsDO.setStatus("publish");
+        contentsDO.setTags(articleDTO.getArticleTags());
+
+
+
+
+        // 查询分类
+
+
+        contentsDO.setCategories(articleDTO.getArticleCategory() + "");
+        contentsDO.setAllowComment(articleDTO.isAllowComment()? 1: 0);
+        contentsDO.setAllowFeed(articleDTO.isAllowFeed()? 1: 0);
+        contentsService.saveContents(contentsDO);
+
+        // 自定义文章访问路径，默认为文章 id
+        if (contentsDO.getSlug() == null) {
+            contentsDO.setSlug(contentsDO.getCid() + "");
+            contentsService.updateContents(contentsDO);
+        }
 
         return true;
     }
@@ -132,5 +165,10 @@ public class PublishController {
     @Autowired
     public void setMetasService(MetasService metasService) {
         this.metasService = metasService;
+    }
+
+    @Autowired
+    public void setContentsService(ContentsService contentsService) {
+        this.contentsService = contentsService;
     }
 }

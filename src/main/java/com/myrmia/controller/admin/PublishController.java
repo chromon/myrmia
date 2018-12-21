@@ -136,14 +136,7 @@ public class PublishController {
         contentsDO.setContentType("post");
         contentsDO.setStatus("publish");
         contentsDO.setTags(articleDTO.getArticleTags());
-
-
-
-
-        // 查询分类
-
-
-        contentsDO.setCategories(articleDTO.getArticleCategory() + "");
+        contentsDO.setCategories(articleDTO.getArticleCategory());
         contentsDO.setAllowComment(articleDTO.isAllowComment()? 1: 0);
         contentsDO.setAllowFeed(articleDTO.isAllowFeed()? 1: 0);
         contentsService.saveContents(contentsDO);

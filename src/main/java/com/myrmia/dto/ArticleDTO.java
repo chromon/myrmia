@@ -12,7 +12,7 @@ public class ArticleDTO {
 
     private String articleTags;
 
-    private int articleCategory;
+    private String articleCategory;
 
     private String articleContent;
 
@@ -46,11 +46,11 @@ public class ArticleDTO {
         this.articleTags = articleTags;
     }
 
-    public int getArticleCategory() {
+    public String getArticleCategory() {
         return articleCategory;
     }
 
-    public void setArticleCategory(int articleCategory) {
+    public void setArticleCategory(String articleCategory) {
         this.articleCategory = articleCategory;
     }
 

@@ -74,7 +74,7 @@
                                             <select id="articleCategory" class="form-control publish-select">
                                                 <option value="0">请选择分类</option>
                                                 <#list categoryList as category>
-                                                <option value="${category.mid}">${category.name}</option>
+                                                <option value="${category.name}">${category.name}</option>
                                                 </#list>
                                             </select>
                                         </div>

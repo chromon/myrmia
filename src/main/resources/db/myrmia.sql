@@ -14,7 +14,7 @@ CREATE TABLE t_users (
     email VARCHAR (100),
     home_url VARCHAR (255),
     screen_name VARCHAR (100),
-    created INTEGER (10) NOT NULL,
+    created BIGINT NOT NULL,
     activated INTEGER (10),
     logged INTEGER (10),
     group_name VARCHAR (16)
@@ -26,7 +26,7 @@ CREATE TABLE t_contents (
     title VARCHAR (255) NOT NULL,
     slug VARCHAR (255) UNIQUE,
     thumb_img VARCHAR(255),
-    created INTEGER (10) NOT NULL,
+    created BIGINT NOT NULL,
     modified INTEGER (10),
     content TEXT,
     author_id INTEGER (10) NOT NULL,
@@ -46,7 +46,7 @@ DROP TABLE IF EXISTS t_comments;
 CREATE TABLE t_comments (
     coid INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     cid INTEGER DEFAULT 0 NOT NULL,
-    created INTEGER (10) NOT NULL,
+    created BIGINT NOT NULL,
     author_name VARCHAR (200) NOT NULL,
     author_id INTEGER (10) DEFAULT 0,
     owner_id INTEGER (10) DEFAULT 0,
@@ -67,7 +67,7 @@ CREATE TABLE t_logs (
     data VARCHAR (2000),
     author_id INTEGER (10) NOT NULL,
     ip VARCHAR (20),
-    created INTEGER (10) NOT NULL
+    created BIGINT NOT NULL
 );
 
 DROP TABLE IF EXISTS t_metas;

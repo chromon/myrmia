@@ -134,7 +134,7 @@ public class PublishController {
         contentsDO.setAuthorId(usersDO.getUid());
         contentsDO.setFmtType("html");
         contentsDO.setContentType("post");
-        contentsDO.setStatus("publish");
+        contentsDO.setStatus("published");
         contentsDO.setTags(articleDTO.getArticleTags());
         contentsDO.setCategories(articleDTO.getArticleCategory());
         contentsDO.setAllowComment(articleDTO.isAllowComment()? 1: 0);

@@ -150,6 +150,18 @@ public class PublishController {
         return true;
     }
 
+    @RequestMapping(value = "/deleteArticle", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean deleteArticle(@RequestParam("cid") int cid) {
+
+        ContentsDO contentsDO = this.contentsService.queryContentByCid(cid);
+        if (contentsDO != null) {
+            this.contentsService.deleteContents(contentsDO);
+        }
+
+        return true;
+    }
+
     @Autowired
     public void setAttachService(AttachService attachService) {
         this.attachService = attachService;

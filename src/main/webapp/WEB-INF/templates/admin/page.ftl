@@ -76,7 +76,7 @@
                                     <tbody>
 
                                     <#list contentsDOList as content>
-                                    <tr>
+                                    <tr id="content_list_${content.cid}">
                                         <td>${content.title}</td>
                                         <td><span>${content.created}</span></td>
                                         <td><span>${content.hits}</span></td>
@@ -92,7 +92,7 @@
                                                 <i class="fa fa-pencil"></i>
                                                 编辑
                                             </button>
-                                            <button type="button" class="btn btn-danger btn-sm">
+                                            <button onclick="deleteArticle(${content.cid});" type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                                 删除
                                             </button>

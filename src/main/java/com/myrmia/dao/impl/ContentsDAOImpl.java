@@ -61,4 +61,17 @@ public class ContentsDAOImpl implements ContentsDAO {
     public void deleteContents(ContentsDO contentsDO) {
         this.getSession().delete(contentsDO);
     }
+
+    /**
+     * 由 id 查询文章
+     * @param cid 文章 id
+     * @return 详细信息
+     */
+    @Override
+    public ContentsDO queryContentByCid(int cid) {
+        String sql = "from ContentsDO c where cid =:cid";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("cid", cid);
+        return (ContentsDO) query.uniqueResult();
+    }
 }

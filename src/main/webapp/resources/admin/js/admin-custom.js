@@ -217,3 +217,32 @@ $('#articlePublish').on('click', function() {
         }
     });
 });
+
+// 删除文章
+function deleteArticle(cid) {
+    let data = {
+        cid: cid
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/deleteArticle',
+        cache: false,
+        success: function (data) {
+            // console.log(data);
+            if (data) {
+                $('#content_list_' + cid).addClass('hide');
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}

@@ -33,4 +33,11 @@ public interface ContentsDAO {
      * @param contentsDO 文章内容
      */
     void deleteContents(ContentsDO contentsDO);
+
+    /**
+     * 由 id 查询文章
+     * @param cid 文章 id
+     * @return 详细信息
+     */
+    ContentsDO queryContentByCid(int cid);
 }

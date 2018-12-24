@@ -53,6 +53,16 @@ public class ContentsServiceImpl implements ContentsService {
         this.contentsDAO.deleteContents(contentsDO);
     }
 
+    /**
+     * 由 id 查询文章
+     * @param cid 文章 id
+     * @return 详细信息
+     */
+    @Override
+    public ContentsDO queryContentByCid(int cid) {
+        return this.contentsDAO.queryContentByCid(cid);
+    }
+
     @Autowired
     public void setContentsDAO(ContentsDAO contentsDAO) {
         this.contentsDAO = contentsDAO;

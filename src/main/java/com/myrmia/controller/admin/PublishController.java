@@ -123,6 +123,18 @@ public class PublishController {
     @ResponseBody
     public boolean postArticle(@ModelAttribute ArticleDTO articleDTO, HttpServletRequest request) {
 
+        return saveArticle(articleDTO, "published", request);
+    }
+
+    @RequestMapping(value = "/postArticleDraft", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean postArticleDraft(@ModelAttribute ArticleDTO articleDTO, HttpServletRequest request) {
+
+        return saveArticle(articleDTO, "drafted", request);
+    }
+
+    private boolean saveArticle(ArticleDTO articleDTO, String status,
+                                HttpServletRequest request) {
         UsersDO usersDO = (UsersDO) request.getSession(true).getAttribute("usersDO");
 
         // 保存内容
@@ -134,7 +146,7 @@ public class PublishController {
         contentsDO.setAuthorId(usersDO.getUid());
         contentsDO.setFmtType("html");
         contentsDO.setContentType("post");
-        contentsDO.setStatus("published");
+        contentsDO.setStatus(status);
         contentsDO.setTags(articleDTO.getArticleTags());
         contentsDO.setCategories(articleDTO.getArticleCategory());
         contentsDO.setAllowComment(articleDTO.isAllowComment()? 1: 0);

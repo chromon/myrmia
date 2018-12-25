@@ -18,20 +18,10 @@ import java.util.List;
 @RequestMapping("/admin")
 public class PageController {
 
-    private ContentsService contentsService;
-
     @RequestMapping(value="/page", method = RequestMethod.GET)
     public String test(Model model) {
         model.addAttribute("active", "page");
 
-        List<ContentsDO> contentsDOList = contentsService.queryContents();
-        model.addAttribute("contentsDOList", contentsDOList);
-
         return "admin/page";
-    }
-
-    @Autowired
-    public void setContentsService(ContentsService contentsService) {
-        this.contentsService = contentsService;
     }
 }

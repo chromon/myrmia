@@ -83,7 +83,7 @@
                                         <div id="summernote"></div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <button type="button" id="articlePublish" class="btn btn-primary">保存文章</button>
+                                        <button type="button" id="articlePublish" class="btn btn-primary">发布文章</button>
                                         <button type="button" id="articleDraft" class="btn btn-success">存为草稿</button>
                                         <div class="checkbox publish-checkbox">
                                             <label>

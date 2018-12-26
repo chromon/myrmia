@@ -42,6 +42,7 @@ public class PublishController {
         // 查询分类列表
         List<MetasDO> categoryList = metasService.queryMetasByType("category");
         model.addAttribute("categoryList", categoryList);
+        model.addAttribute("editAction", "false");
 
         return "admin/publish";
     }
@@ -172,6 +173,24 @@ public class PublishController {
         }
 
         return true;
+    }
+
+    @RequestMapping(value = "/editArticle/{cid}", method = RequestMethod.GET)
+    public String editArticle(@PathVariable("cid") int cid, Model model) {
+
+        ContentsDO contentsDO = this.contentsService.queryContentByCid(cid);
+        if (contentsDO != null) {
+            model.addAttribute("editAction", "true");
+           model.addAttribute("contentsDO", contentsDO);
+        }
+
+        model.addAttribute("active", "publish");
+
+        // 查询分类列表
+        List<MetasDO> categoryList = metasService.queryMetasByType("category");
+        model.addAttribute("categoryList", categoryList);
+
+        return "admin/publish";
     }
 
     @Autowired

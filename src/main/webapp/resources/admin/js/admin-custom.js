@@ -221,9 +221,6 @@ $('#articlePublish').on('click', function() {
 // 保持文章草稿
 $('#articleDraft').on('click', function() {
 
-    console.log("hehe");
-
-
     let articleTitle = $('#articleTitle').val();
     let articleSlug = $('#articleSlug').val();
     let articleTags = $('#articleTags').val();
@@ -246,29 +243,27 @@ $('#articleDraft').on('click', function() {
         allowFeed: allowFeed
     };
 
-    console.log(data);
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/postArticleDraft',
+        cache: false,
+        success: function (data) {
+            // console.log(data);
+            if (data) {
+                window.location.href = "/admin/article";
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
 
-    // $.ajax({
-    //     data: data,
-    //     type: 'POST',
-    //     url: basePath + '/admin/postArticleDraft',
-    //     cache: false,
-    //     success: function (data) {
-    //         // console.log(data);
-    //         if (data) {
-    //             window.location.href = "/admin/page";
-    //         }
-    //     },
-    //     error: function(jqXHR, textStatus, errorThrown) {
-    //         console.log('responseText: ' + jqXHR.responseText);
-    //         console.log('status: ' + jqXHR.status);
-    //         console.log('readyState: ' + jqXHR.readyState);
-    //         console.log('statusText: ' + jqXHR.statusText);
-    //
-    //         console.log('textStatus: ' + textStatus);
-    //         console.log('errorThrown: ' + errorThrown);
-    //     }
-    // });
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
 });
 
 // 删除文章
@@ -287,6 +282,32 @@ function deleteArticle(cid) {
             if (data) {
                 $('#content_list_' + cid).addClass('hide');
             }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}
+
+// 编辑文章
+function editArticle(cid) {
+    let data = {
+        cid: cid
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/editArticle',
+        cache: false,
+        success: function (data) {
+            console.log(data);
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log('responseText: ' + jqXHR.responseText);

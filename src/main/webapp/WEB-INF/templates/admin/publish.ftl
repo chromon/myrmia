@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <div id="summernote"></div>
+                                        <div id="summernote">aaa</div>
                                     </div>
                                     <div class="col-lg-10">
                                         <button type="button" id="articlePublish" class="btn btn-primary">发布文章</button>
@@ -127,15 +127,15 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-10">
-                                            <div id="summernote"></div>
-                                            <script>
-                                                let markupStr = '${contentsDO.content}';
-                                                $('#summernote').summernote('code', markupStr);
-                                            </script>
+                                            <div id="summernote">sss</div>
+                                            <#--<script>-->
+                                                <#--let markupStr = '${contentsDO.content}';-->
+                                                <#--$('#summernote').summernote('code', markupStr);-->
+                                            <#--</script>-->
                                         </div>
                                         <div class="col-lg-10">
-                                            <button type="button" id="articlePublish" class="btn btn-primary">发布文章</button>
-                                            <button type="button" id="articleDraft" class="btn btn-success">存为草稿</button>
+                                            <button type="button" onclick="editArticlePublish(${contentsDO.cid});" class="btn btn-primary">发布文章</button>
+                                            <button type="button" class="btn btn-success">存为草稿</button>
                                             <div class="checkbox publish-checkbox">
                                                 <label>
                                                     <input type="checkbox" id="allowComment" checked> 开启评论

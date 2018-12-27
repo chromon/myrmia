@@ -184,6 +184,8 @@ $('#articlePublish').on('click', function() {
     let allowPing = $('#allowPing').is(':checked');
     let allowFeed = $('#allowFeed').is(':checked');
 
+    let edit = false;
+
     let data = {
         articleTitle: articleTitle,
         articleSlug: articleSlug,
@@ -192,7 +194,8 @@ $('#articlePublish').on('click', function() {
         articleContent: articleContent,
         allowComment: allowComment,
         allowPing: allowPing,
-        allowFeed: allowFeed
+        allowFeed: allowFeed,
+        edit: edit
     };
 
     $.ajax({
@@ -218,7 +221,7 @@ $('#articlePublish').on('click', function() {
     });
 });
 
-// 保持文章草稿
+// 保存文章草稿
 $('#articleDraft').on('click', function() {
 
     let articleTitle = $('#articleTitle').val();
@@ -265,6 +268,62 @@ $('#articleDraft').on('click', function() {
         }
     });
 });
+
+// 发布编辑文章
+function editArticlePublish(cid) {
+
+    console.log("hehe"+cid);
+
+    let articleTitle = $('#articleTitle').val();
+    let articleSlug = $('#articleSlug').val();
+    let articleTags = $('#articleTags').val();
+    let articleCategory = $('#articleCategory').val();
+
+    let articleContent = $('#summernote').summernote('code');
+
+    let allowComment = $('#allowComment').is(':checked');
+    let allowPing = $('#allowPing').is(':checked');
+    let allowFeed = $('#allowFeed').is(':checked');
+
+    console.log(articleContent + "=====" + articleTags);
+
+    let edit = true;
+
+    let data = {
+        articleTitle: articleTitle,
+        articleSlug: articleSlug,
+        articleTags: articleTags,
+        articleCategory: articleCategory,
+        articleContent: articleContent,
+        allowComment: allowComment,
+        allowPing: allowPing,
+        allowFeed: allowFeed,
+        cid: cid,
+        edit: edit
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/postArticle',
+        cache: false,
+        success: function (data) {
+            // console.log(data);
+            if (data) {
+                window.location.href = "/admin/article";
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}
 
 // 删除文章
 function deleteArticle(cid) {

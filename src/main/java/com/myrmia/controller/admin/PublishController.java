@@ -139,10 +139,24 @@ public class PublishController {
         UsersDO usersDO = (UsersDO) request.getSession(true).getAttribute("usersDO");
 
         // 保存内容
-        ContentsDO contentsDO = new ContentsDO();
+        ContentsDO contentsDO;
+
+        System.out.println(articleDTO.isEdit());
+
+        if (articleDTO.isEdit()) {
+            // 处于编辑模式
+            contentsDO = contentsService.queryContentByCid(articleDTO.getCid());
+        } else {
+            // 正常模式
+            contentsDO = new ContentsDO();
+        }
+
+        System.out.println("=:"+articleDTO.getArticleContent());
+        System.out.println("=:"+articleDTO.getArticleTags());
+
         contentsDO.setTitle(articleDTO.getArticleTitle());
         contentsDO.setSlug(articleDTO.getArticleSlug());
-        contentsDO.setCreated(new Date().getTime());
+        contentsDO.setModified(new Date().getTime());
         contentsDO.setContent(articleDTO.getArticleContent());
         contentsDO.setAuthorId(usersDO.getUid());
         contentsDO.setFmtType("html");
@@ -152,7 +166,17 @@ public class PublishController {
         contentsDO.setCategories(articleDTO.getArticleCategory());
         contentsDO.setAllowComment(articleDTO.isAllowComment()? 1: 0);
         contentsDO.setAllowFeed(articleDTO.isAllowFeed()? 1: 0);
-        contentsService.saveContents(contentsDO);
+
+        System.out.println("=="+articleDTO.isEdit());
+        if (articleDTO.isEdit()) {
+            // 编辑模式更新
+            System.out.println("--"+articleDTO.isEdit());
+            contentsService.updateContents(contentsDO);
+        } else {
+            // 正常模式创建
+            System.out.println("**"+articleDTO.isEdit());
+            contentsService.saveContents(contentsDO);
+        }
 
         // 自定义文章访问路径，默认为文章 id
         if (contentsDO.getSlug() == null) {

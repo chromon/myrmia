@@ -6,6 +6,8 @@ package com.myrmia.dto;
  */
 public class ArticleDTO {
 
+    private int cid;
+
     private String articleTitle;
 
     private String articleSlug;
@@ -21,6 +23,16 @@ public class ArticleDTO {
     private boolean allowPing;
 
     private boolean allowFeed;
+
+    private boolean edit;
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
 
     public String getArticleTitle() {
         return articleTitle;
@@ -84,5 +96,13 @@ public class ArticleDTO {
 
     public void setAllowFeed(boolean allowFeed) {
         this.allowFeed = allowFeed;
+    }
+
+    public boolean isEdit() {
+        return edit;
+    }
+
+    public void setEdit(boolean edit) {
+        this.edit = edit;
     }
 }

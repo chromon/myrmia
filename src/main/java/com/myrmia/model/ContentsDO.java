@@ -20,7 +20,7 @@ public class ContentsDO {
 
     private long created;
 
-    private int modified;
+    private long modified;
 
     private String content;
 
@@ -93,12 +93,12 @@ public class ContentsDO {
         this.created = created;
     }
 
-    @Column(name = "modified", columnDefinition = "integer(10)")
-    public int getModified() {
+    @Column(name = "modified", columnDefinition = "bigint")
+    public long getModified() {
         return modified;
     }
 
-    public void setModified(int modified) {
+    public void setModified(long modified) {
         this.modified = modified;
     }
 

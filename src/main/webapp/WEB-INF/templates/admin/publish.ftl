@@ -14,9 +14,6 @@
     <!-- Custom CSS -->
     <#include "inc/css.ftl">
 
-    <!-- js -->
-    <#include "inc/js.ftl">
-    <!-- end js -->
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -127,11 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-10">
-                                            <div id="summernote">sss</div>
-                                            <#--<script>-->
-                                                <#--let markupStr = '${contentsDO.content}';-->
-                                                <#--$('#summernote').summernote('code', markupStr);-->
-                                            <#--</script>-->
+                                            <div id="summernote">${contentsDO.content}</div>
                                         </div>
                                         <div class="col-lg-10">
                                             <button type="button" onclick="editArticlePublish(${contentsDO.cid});" class="btn btn-primary">发布文章</button>
@@ -165,6 +158,9 @@
 </div>
 <!-- End Wrapper -->
 
+<!-- js -->
+<#include "inc/js.ftl">
+<!-- end js -->
 </body>
 
 </html>

@@ -40,7 +40,7 @@ public class ContentsServiceImpl implements ContentsService {
      * @param contentsDO 文章内容
      */
     @Override
-    public void updateContents(ContentsDO contentsDO) {
+    public void modifyContents(ContentsDO contentsDO) {
         this.contentsDAO.updateContents(contentsDO);
     }
 

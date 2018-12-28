@@ -26,7 +26,7 @@ public interface ContentsService {
      * 更新文章
      * @param contentsDO 文章内容
      */
-    void updateContents(ContentsDO contentsDO);
+    void modifyContents(ContentsDO contentsDO);
 
     /**
      * 删除文章

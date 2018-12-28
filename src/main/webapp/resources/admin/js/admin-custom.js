@@ -272,7 +272,6 @@ $('#articleDraft').on('click', function() {
 // 发布编辑文章
 function editArticlePublish(cid) {
 
-    console.log("hehe"+cid);
 
     let articleTitle = $('#articleTitle').val();
     let articleSlug = $('#articleSlug').val();
@@ -284,8 +283,6 @@ function editArticlePublish(cid) {
     let allowComment = $('#allowComment').is(':checked');
     let allowPing = $('#allowPing').is(':checked');
     let allowFeed = $('#allowFeed').is(':checked');
-
-    console.log(articleContent + "=====" + articleTags);
 
     let edit = true;
 

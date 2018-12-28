@@ -272,7 +272,6 @@ $('#articleDraft').on('click', function() {
 // 发布编辑文章
 function editArticlePublish(cid) {
 
-
     let articleTitle = $('#articleTitle').val();
     let articleSlug = $('#articleSlug').val();
     let articleTags = $('#articleTags').val();
@@ -303,6 +302,58 @@ function editArticlePublish(cid) {
         data: data,
         type: 'POST',
         url: basePath + '/admin/postArticle',
+        cache: false,
+        success: function (data) {
+            // console.log(data);
+            if (data) {
+                window.location.href = "/admin/article";
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}
+
+// 草稿编辑文章
+function editArticleDraft(cid) {
+
+    let articleTitle = $('#articleTitle').val();
+    let articleSlug = $('#articleSlug').val();
+    let articleTags = $('#articleTags').val();
+    let articleCategory = $('#articleCategory').val();
+
+    let articleContent = $('#summernote').summernote('code');
+
+    let allowComment = $('#allowComment').is(':checked');
+    let allowPing = $('#allowPing').is(':checked');
+    let allowFeed = $('#allowFeed').is(':checked');
+
+    let edit = true;
+
+    let data = {
+        articleTitle: articleTitle,
+        articleSlug: articleSlug,
+        articleTags: articleTags,
+        articleCategory: articleCategory,
+        articleContent: articleContent,
+        allowComment: allowComment,
+        allowPing: allowPing,
+        allowFeed: allowFeed,
+        cid: cid,
+        edit: edit
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/postArticleDraft',
         cache: false,
         success: function (data) {
             // console.log(data);

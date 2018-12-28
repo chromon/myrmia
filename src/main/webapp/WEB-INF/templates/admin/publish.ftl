@@ -128,7 +128,7 @@
                                         </div>
                                         <div class="col-lg-10">
                                             <button type="button" onclick="editArticlePublish(${contentsDO.cid});" class="btn btn-primary">发布文章</button>
-                                            <button type="button" class="btn btn-success">存为草稿</button>
+                                            <button type="button" onclick="editArticleDraft(${contentsDO.cid});" class="btn btn-success">存为草稿</button>
                                             <div class="checkbox publish-checkbox">
                                                 <label>
                                                     <input type="checkbox" id="allowComment" checked> 开启评论

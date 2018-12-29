@@ -1,6 +1,7 @@
 package com.myrmia.controller.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.myrmia.controller.BaseController;
 import com.myrmia.dto.ArticleDTO;
 import com.myrmia.model.AttachDO;
 import com.myrmia.model.ContentsDO;
@@ -29,7 +30,7 @@ import java.util.UUID;
  */
 @Controller("adminPublishController")
 @RequestMapping("/admin")
-public class PublishController {
+public class PublishController implements BaseController {
 
     private AttachService attachService;
     private MetasService metasService;
@@ -201,7 +202,7 @@ public class PublishController {
         ContentsDO contentsDO = this.contentsService.queryContentByCid(cid);
         if (contentsDO != null) {
             model.addAttribute("editAction", "true");
-           model.addAttribute("contentsDO", contentsDO);
+            model.addAttribute("contentsDO", contentsDO);
         }
 
         model.addAttribute("active", "publish");
@@ -211,6 +212,16 @@ public class PublishController {
         model.addAttribute("categoryList", categoryList);
 
         return "admin/publish";
+    }
+
+    @RequestMapping(value = "/preview/{cid}", method = RequestMethod.GET)
+    public String previewArticle(@PathVariable("cid") int cid, Model model) {
+
+        ContentsDO contentsDO = this.contentsService.queryContentByCid(cid);
+
+        model.addAttribute("contentsDO", contentsDO);
+
+        return "theme/" + THEME + "/post";
     }
 
     @Autowired

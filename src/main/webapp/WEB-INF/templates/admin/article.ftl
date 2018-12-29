@@ -96,10 +96,10 @@
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                                 删除
                                             </button>
-                                            <button type="button" class="btn btn-success btn-sm">
+                                            <a href="/admin/preview/${content.cid}" target="_blank" class="btn btn-success btn-sm">
                                                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
                                                 预览
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     </#list>

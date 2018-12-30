@@ -181,6 +181,17 @@ public class PublishController implements BaseController {
             contentsService.modifyContents(contentsDO);
         }
 
+        // 保存标签
+
+
+        
+
+        // 保存标签文章对应关系
+
+
+
+
+
         return true;
     }
 

@@ -8,7 +8,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "t_relationships")
-public class RelationsshipsDO {
+public class RelationshipsDO {
 
     private int rid;
 

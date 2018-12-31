@@ -51,8 +51,13 @@ public class MetasServiceImpl implements MetasService {
     }
 
     @Override
-    public void updateMetas(MetasDO metasDO) {
+    public void modifyMetas(MetasDO metasDO) {
         this.metasDAO.updateMetas(metasDO);
+    }
+
+    @Override
+    public MetasDO queryMetasByNameAndType(String name, String metasType) {
+        return this.metasDAO.queryMetasByNameAndType(name, metasType);
     }
 
     @Autowired

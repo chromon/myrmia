@@ -1,7 +1,6 @@
 package com.myrmia.dao.impl;
 
 import com.myrmia.dao.MetasDAO;
-import com.myrmia.dao.UsersDAO;
 import com.myrmia.model.MetasDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -75,5 +74,20 @@ public class MetasDAOImpl implements MetasDAO {
     @Override
     public void updateMetas(MetasDO metasDO) {
         this.getSession().update(metasDO);
+    }
+
+    /**
+     * 由名称和类型查询数据
+     * @param name 名称
+     * @param metasType 类型
+     * @return 元数据信息
+     */
+    @Override
+    public MetasDO queryMetasByNameAndType(String name, String metasType) {
+        String sql = "from MetasDO m where m.name =:name and m.metasType =:metasType";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("name", name);
+        query.setParameter("metasType", metasType);
+        return (MetasDO) query.uniqueResult();
     }
 }

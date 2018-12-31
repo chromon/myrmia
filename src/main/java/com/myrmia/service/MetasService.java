@@ -39,5 +39,13 @@ public interface MetasService {
      * 更新元数据信息
      * @param metasDO 元数据信息
      */
-    void updateMetas(MetasDO metasDO);
+    void modifyMetas(MetasDO metasDO);
+
+    /**
+     * 由名称和类型查询数据
+     * @param name 名称
+     * @param metasType 类型
+     * @return 元数据信息
+     */
+    MetasDO queryMetasByNameAndType(String name, String metasType);
 }

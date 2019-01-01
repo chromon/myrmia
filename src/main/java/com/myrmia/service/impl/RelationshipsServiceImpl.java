@@ -24,6 +24,22 @@ public class RelationshipsServiceImpl implements RelationshipsService {
         this.relationshipsDAO.addRelationships(relationshipsDO);
     }
 
+    /**
+     * 由文章 id 和数据 id 查询关系信息
+     * @param cid 文章 id
+     * @param mid 数据 id
+     * @return 关系信息
+     */
+    @Override
+    public RelationshipsDO queryRelationshipsByCidMid(int cid, int mid) {
+        return this.relationshipsDAO.queryRelationshipsByCidMid(cid, mid);
+    }
+
+    @Override
+    public int queryRelationshipsCount(int cid, int mid) {
+        return this.relationshipsDAO.queryRelationshipsCount(cid, mid);
+    }
+
     @Autowired
     public void setRelationshipsDAO(RelationshipsDAO relationshipsDAO) {
         this.relationshipsDAO = relationshipsDAO;

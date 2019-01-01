@@ -45,16 +45,30 @@ public class MetasServiceImpl implements MetasService {
         metasDAO.deleteMetas(metasDO);
     }
 
+    /**
+     * 由类型查询元数据
+     * @return 元数据信息
+     */
     @Override
     public List<MetasDO> queryMetasByType(String metasType) {
         return metasDAO.queryMetasByType(metasType);
     }
 
+    /**
+     * 更新元数据信息
+     * @param metasDO 元数据信息
+     */
     @Override
     public void modifyMetas(MetasDO metasDO) {
         this.metasDAO.updateMetas(metasDO);
     }
 
+    /**
+     * 由名称和类型查询数据
+     * @param name 名称
+     * @param metasType 类型
+     * @return 元数据信息
+     */
     @Override
     public MetasDO queryMetasByNameAndType(String name, String metasType) {
         return this.metasDAO.queryMetasByNameAndType(name, metasType);

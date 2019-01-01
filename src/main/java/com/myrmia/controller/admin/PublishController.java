@@ -3,13 +3,11 @@ package com.myrmia.controller.admin;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myrmia.controller.BaseController;
 import com.myrmia.dto.ArticleDTO;
-import com.myrmia.model.AttachDO;
-import com.myrmia.model.ContentsDO;
-import com.myrmia.model.MetasDO;
-import com.myrmia.model.UsersDO;
+import com.myrmia.model.*;
 import com.myrmia.service.AttachService;
 import com.myrmia.service.ContentsService;
 import com.myrmia.service.MetasService;
+import com.myrmia.service.RelationshipsService;
 import com.myrmia.utils.date.DateUtils;
 import com.myrmia.utils.file.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,7 @@ public class PublishController implements BaseController {
     private AttachService attachService;
     private MetasService metasService;
     private ContentsService contentsService;
+    private RelationshipsService relationshipsService;
 
     @RequestMapping(value="/publish", method = RequestMethod.GET)
     public String test(Model model) {
@@ -182,15 +181,32 @@ public class PublishController implements BaseController {
         }
 
         // 保存标签
+        String[] tags = articleDTO.getArticleTags().split(" ");
+        for (String tag: tags) {
+            MetasDO metasDO = metasService.queryMetasByNameAndType(tag, "tag");
+            int mid = 0;
 
+            if (metasDO != null) {
+                mid = metasDO.getMid();
+            } else {
+                MetasDO meta = new MetasDO();
+                meta.setName(tag);
+                meta.setSlug(tag);
+                meta.setMetasType("tag");
+                metasService.saveMetas(meta);
+                mid = meta.getMid();
+            }
 
+            // 保存标签文章对应关系
+            int count = relationshipsService.queryRelationshipsCount(contentsDO.getCid(), mid);
+            if (count == 0) {
+                RelationshipsDO relationshipsDO = new RelationshipsDO();
+                relationshipsDO.setCid(contentsDO.getCid());
+                relationshipsDO.setMid(mid);
+                relationshipsService.saveRelationships(relationshipsDO);
+            }
 
-
-        // 保存标签文章对应关系
-
-
-
-
+        }
 
         return true;
     }
@@ -248,5 +264,10 @@ public class PublishController implements BaseController {
     @Autowired
     public void setContentsService(ContentsService contentsService) {
         this.contentsService = contentsService;
+    }
+
+    @Autowired
+    public void setRelationshipsService(RelationshipsService relationshipsService) {
+        this.relationshipsService = relationshipsService;
     }
 }

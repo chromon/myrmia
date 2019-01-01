@@ -13,4 +13,20 @@ public interface RelationshipsService {
      * @param relationshipsDO 关系
      */
     void saveRelationships(RelationshipsDO relationshipsDO);
+
+    /**
+     * 由文章 id 和数据 id 查询关系信息
+     * @param cid 文章 id
+     * @param mid 数据 id
+     * @return 关系信息
+     */
+    RelationshipsDO queryRelationshipsByCidMid(int cid, int mid);
+
+    /**
+     * 查询关系数量
+     * @param cid 文章 id
+     * @param mid 数据 id
+     * @return 关系数量
+     */
+    int queryRelationshipsCount(int cid, int mid);
 }

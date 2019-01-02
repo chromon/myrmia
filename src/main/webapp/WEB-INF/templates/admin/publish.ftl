@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="form-group form-inline">
                                         <div class="col-lg-5">
-                                            <input type="text" id="articleTags" class="custom-article-info form-control" placeholder="文章标签">
+                                            <input type="text" id="articleTags" class="custom-article-info form-control" placeholder="文章标签（以空格分隔）">
                                         </div>
                                         <div class="col-lg-5">
                                             <select id="articleCategory" class="form-control publish-select">
@@ -82,7 +82,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-10">
-                                        <div id="summernote">aaa</div>
+                                        <div id="summernote"></div>
                                     </div>
                                     <div class="col-lg-10">
                                         <button type="button" id="articlePublish" class="btn btn-primary">发布文章</button>
@@ -112,7 +112,7 @@
                                         </div>
                                         <div class="form-group form-inline">
                                             <div class="col-lg-5">
-                                                <input type="text" value="${contentsDO.tags}" id="articleTags" class="custom-article-info form-control" placeholder="文章标签">
+                                                <input type="text" value="${contentsDO.tags}" id="articleTags" class="custom-article-info form-control" placeholder="文章标签（以空格分隔）">
                                             </div>
                                             <div class="col-lg-5">
                                                 <select id="articleCategory" class="form-control publish-select">

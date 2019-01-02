@@ -90,4 +90,17 @@ public class MetasDAOImpl implements MetasDAO {
         query.setParameter("metasType", metasType);
         return (MetasDO) query.uniqueResult();
     }
+
+    /**
+     * 由数据 id 查询详细信息
+     * @param mid 元数据 id
+     * @return 元数据信息
+     */
+    @Override
+    public MetasDO queryMetasByMid(int mid) {
+        String sql = "from MetasDO m where m.mid =:mid";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("mid", mid);
+        return (MetasDO) query.uniqueResult();
+    }
 }

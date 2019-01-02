@@ -6,6 +6,8 @@ import com.myrmia.service.RelationshipsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * relationships service impl
  * Created by Ellery on 2018/12/30.
@@ -35,9 +37,24 @@ public class RelationshipsServiceImpl implements RelationshipsService {
         return this.relationshipsDAO.queryRelationshipsByCidMid(cid, mid);
     }
 
+    /**
+     * 查询关系数量
+     * @param cid 文章 id
+     * @param mid 数据 id
+     * @return 关系数量
+     */
     @Override
     public int queryRelationshipsCount(int cid, int mid) {
         return this.relationshipsDAO.queryRelationshipsCount(cid, mid);
+    }
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
+    @Override
+    public List<RelationshipsDO> queryRelationshipsGroupByMid() {
+        return this.relationshipsDAO.queryRelationshipsGroupByMid();
     }
 
     @Autowired

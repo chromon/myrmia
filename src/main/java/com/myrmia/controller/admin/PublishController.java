@@ -18,6 +18,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -43,6 +44,15 @@ public class PublishController implements BaseController {
         List<MetasDO> categoryList = metasService.queryMetasByType("category");
         model.addAttribute("categoryList", categoryList);
         model.addAttribute("editAction", "false");
+
+        // 查询标签
+        List<MetasDO> metasDOList = new ArrayList<>();
+        List<RelationshipsDO> relationshipsDOList = relationshipsService.queryRelationshipsGroupByMid();
+        for (RelationshipsDO relationshipsDO: relationshipsDOList) {
+            MetasDO metasDO = metasService.queryMetasByMid(relationshipsDO.getMid());
+            metasDOList.add(metasDO);
+        }
+        model.addAttribute("metasList", metasDOList);
 
         return "admin/publish";
     }

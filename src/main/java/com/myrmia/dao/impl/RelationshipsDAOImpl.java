@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * relationships dao impl
@@ -60,5 +61,16 @@ public class RelationshipsDAOImpl implements RelationshipsDAO {
         query.setParameter("cid", cid);
         query.setParameter("mid", mid);
         return ((Number)query.uniqueResult()).intValue();
+    }
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
+    @Override
+    public List<RelationshipsDO> queryRelationshipsGroupByMid() {
+        String sql = "from RelationshipsDO r group by r.mid";
+        Query query = this.getSession().createQuery(sql);
+        return query.list();
     }
 }

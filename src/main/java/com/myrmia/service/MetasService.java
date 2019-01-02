@@ -48,4 +48,11 @@ public interface MetasService {
      * @return 元数据信息
      */
     MetasDO queryMetasByNameAndType(String name, String metasType);
+
+    /**
+     * 由数据 id 查询详细信息
+     * @param mid 元数据 id
+     * @return 元数据信息
+     */
+    MetasDO queryMetasByMid(int mid);
 }

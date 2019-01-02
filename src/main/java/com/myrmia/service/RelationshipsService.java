@@ -2,6 +2,8 @@ package com.myrmia.service;
 
 import com.myrmia.model.RelationshipsDO;
 
+import java.util.List;
+
 /**
  * relationships service
  * Created by Ellery on 2018/12/30.
@@ -29,4 +31,10 @@ public interface RelationshipsService {
      * @return 关系数量
      */
     int queryRelationshipsCount(int cid, int mid);
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
+    List<RelationshipsDO> queryRelationshipsGroupByMid();
 }

@@ -74,6 +74,16 @@ public class MetasServiceImpl implements MetasService {
         return this.metasDAO.queryMetasByNameAndType(name, metasType);
     }
 
+    /**
+     * 由数据 id 查询详细信息
+     * @param mid 元数据 id
+     * @return 元数据信息
+     */
+    @Override
+    public MetasDO queryMetasByMid(int mid) {
+        return this.metasDAO.queryMetasByMid(mid);
+    }
+
     @Autowired
     public void setMetasDAO(MetasDAO metasDAO) {
         this.metasDAO = metasDAO;

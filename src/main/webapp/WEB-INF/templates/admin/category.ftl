@@ -91,16 +91,16 @@
                             <h4>标签列表</h4>
                         </div>
                         <div class="card-body">
+                            <#list metasList as meta>
                             <div class="dropdown">
-                                <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Dropdown Example
+                                <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    ${meta.name}
                                     <span class="caret"></span></button>
                                 <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">JavaScript</a></li>
+                                    <li><a href="#">删除</a></li>
                                 </ul>
                             </div>
+                            </#list>
                         </div>
                     </div>
                 </div>

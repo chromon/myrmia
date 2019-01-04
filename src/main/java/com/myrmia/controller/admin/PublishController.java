@@ -257,6 +257,7 @@ public class PublishController implements BaseController {
         ContentsDO contentsDO = this.contentsService.queryContentByCid(cid);
 
         model.addAttribute("contentsDO", contentsDO);
+        model.addAttribute("preview", "preview");
 
         return "theme/" + THEME + "/post";
     }

@@ -41,7 +41,7 @@
     </div>
 </section>
 <!-- End Sample Area -->
-
+<#if preview == "preview">
 <!-- -->
 <section>
     <div class="container">
@@ -178,6 +178,7 @@
     </div>
 </section>
 <!-- End Comment Area -->
+</#if>
 
 
 <!-- footer -->

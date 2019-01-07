@@ -21,4 +21,16 @@ public interface OptionsService {
      * @return 详细信息
      */
     OptionsDO queryOptionsByName(String optionsName);
+
+    /**
+     * 更新信息
+     * @param optionsDO 信息
+     */
+    void modifyOptions(OptionsDO optionsDO);
+
+    /**
+     * 删除信息
+     * @param optionsDO 信息
+     */
+    void deleteOptions(OptionsDO optionsDO);
 }

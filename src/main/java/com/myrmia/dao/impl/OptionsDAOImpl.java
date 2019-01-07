@@ -44,4 +44,22 @@ public class OptionsDAOImpl implements OptionsDAO {
         query.setParameter("optionsName", optionsName);
         return (OptionsDO) query.uniqueResult();
     }
+
+    /**
+     * 更新信息
+     * @param optionsDO 信息
+     */
+    @Override
+    public void updateOptions(OptionsDO optionsDO) {
+        this.getSession().update(optionsDO);
+    }
+
+    /**
+     * 删除信息
+     * @param optionsDO 信息
+     */
+    @Override
+    public void deleteOptions(OptionsDO optionsDO) {
+        this.getSession().delete(optionsDO);
+    }
 }

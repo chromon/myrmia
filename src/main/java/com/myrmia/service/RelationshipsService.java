@@ -37,4 +37,16 @@ public interface RelationshipsService {
      * @return 关系信息
      */
     List<RelationshipsDO> queryRelationshipsGroupByMid();
+
+    /**
+     * 删除关系
+     * @param relationshipsDO 关系信息
+     */
+    void deleteRelationships(RelationshipsDO relationshipsDO);
+
+    /**
+     * 更新关系
+     * @param relationshipsDO 关系信息
+     */
+    void modifyRelationships(RelationshipsDO relationshipsDO);
 }

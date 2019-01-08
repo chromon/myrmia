@@ -57,6 +57,24 @@ public class RelationshipsServiceImpl implements RelationshipsService {
         return this.relationshipsDAO.queryRelationshipsGroupByMid();
     }
 
+    /**
+     * 删除关系
+     * @param relationshipsDO 关系信息
+     */
+    @Override
+    public void deleteRelationships(RelationshipsDO relationshipsDO) {
+        this.relationshipsDAO.deleteRelationships(relationshipsDO);
+    }
+
+    /**
+     * 更新关系
+     * @param relationshipsDO 关系信息
+     */
+    @Override
+    public void modifyRelationships(RelationshipsDO relationshipsDO) {
+        this.relationshipsDAO.updateRelationships(relationshipsDO);
+    }
+
     @Autowired
     public void setRelationshipsDAO(RelationshipsDAO relationshipsDAO) {
         this.relationshipsDAO = relationshipsDAO;

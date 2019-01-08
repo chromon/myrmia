@@ -73,4 +73,22 @@ public class RelationshipsDAOImpl implements RelationshipsDAO {
         Query query = this.getSession().createQuery(sql);
         return query.list();
     }
+
+    /**
+     * 删除关系
+     * @param relationshipsDO 关系信息
+     */
+    @Override
+    public void deleteRelationships(RelationshipsDO relationshipsDO) {
+        this.getSession().delete(relationshipsDO);
+    }
+
+    /**
+     * 更新关系
+     * @param relationshipsDO 关系信息
+     */
+    @Override
+    public void updateRelationships(RelationshipsDO relationshipsDO) {
+        this.getSession().update(relationshipsDO);
+    }
 }

@@ -20,4 +20,16 @@ public interface UsersDAO {
      * @return 用户信息
      */
     UsersDO queryUsersByName(String username);
+
+    /**
+     * 更新用户
+     * @param usersDO 用户信息
+     */
+    void updateUser(UsersDO usersDO);
+
+    /**
+     * 删除用户
+     * @param usersDO 用户信息
+     */
+    void deleteUser(UsersDO usersDO);
 }

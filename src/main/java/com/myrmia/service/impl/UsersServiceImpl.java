@@ -33,6 +33,24 @@ public class UsersServiceImpl implements UsersService {
         return this.usersDAO.queryUsersByName(username);
     }
 
+    /**
+     * 更新用户
+     * @param usersDO 用户信息
+     */
+    @Override
+    public void modifyUser(UsersDO usersDO) {
+        this.usersDAO.updateUser(usersDO);
+    }
+
+    /**
+     * 删除用户
+     * @param usersDO 用户信息
+     */
+    @Override
+    public void deleteUser(UsersDO usersDO) {
+        this.usersDAO.deleteUser(usersDO);
+    }
+
     @Autowired
     public void setUsersDAO(UsersDAO usersDAO) {
         this.usersDAO = usersDAO;

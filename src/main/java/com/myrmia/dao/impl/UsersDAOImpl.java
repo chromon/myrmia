@@ -44,4 +44,22 @@ public class UsersDAOImpl implements UsersDAO {
         query.setParameter("username", username);
         return (UsersDO) query.uniqueResult();
     }
+
+    /**
+     * 更新用户
+     * @param usersDO 用户信息
+     */
+    @Override
+    public void updateUser(UsersDO usersDO) {
+        this.getSession().update(usersDO);
+    }
+
+    /**
+     * 删除用户
+     * @param usersDO 用户信息
+     */
+    @Override
+    public void deleteUser(UsersDO usersDO) {
+        this.getSession().delete(usersDO);
+    }
 }

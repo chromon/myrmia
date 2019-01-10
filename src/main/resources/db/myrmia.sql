@@ -88,16 +88,16 @@ CREATE TABLE t_options (
     options_value TEXT,
     description VARCHAR (255)
 );
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'site_title', '博客系统', '');
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'social_weibo', '', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'social_zhihu', '', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'social_github', '', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'social_twitter', '', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'allow_install', 'false', '是否允许重新安装博客');
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'allow_comment_audit', 'true', '评论需要审核');
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'site_theme', 'default', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'site_keywords', '博客系统', NULL);
-INSERT INTO t_options (id, name, value, description) VALUES (0, 'site_description', '博客系统', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'site_title', '博客系统', '');
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'social_weibo', '', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'social_zhihu', '', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'social_github', '', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'social_twitter', '', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'allow_install', 'false', '是否允许重新安装博客');
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'allow_comment_audit', 'true', '评论需要审核');
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'site_theme', 'default', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'site_keywords', '博客系统', NULL);
+INSERT INTO t_options (id, options_name, options_value, description) VALUES (0, 'site_description', '博客系统', NULL);
 
 DROP TABLE IF EXISTS t_relationships;
 CREATE TABLE t_relationships (

@@ -24,6 +24,24 @@ public class LogsServiceImpl implements LogsService {
         this.logsDAO.addLogs(logsDO);
     }
 
+    /**
+     * 更新日志
+     * @param logsDO 日志信息
+     */
+    @Override
+    public void modifyLogs(LogsDO logsDO) {
+        this.logsDAO.updateLogs(logsDO);
+    }
+
+    /**
+     * 删除日志
+     * @param logsDO 日志信息
+     */
+    @Override
+    public void deleteLogs(LogsDO logsDO) {
+        this.logsDAO.deleteLogs(logsDO);
+    }
+
     @Autowired
     public void setLogsDAO(LogsDAO logsDAO) {
         this.logsDAO = logsDAO;

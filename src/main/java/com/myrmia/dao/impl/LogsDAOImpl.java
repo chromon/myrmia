@@ -30,4 +30,22 @@ public class LogsDAOImpl implements LogsDAO {
     public void addLogs(LogsDO logsDO) {
         this.getSession().save(logsDO);
     }
+
+    /**
+     * 更新日志
+     * @param logsDO 日志信息
+     */
+    @Override
+    public void updateLogs(LogsDO logsDO) {
+        this.getSession().update(logsDO);
+    }
+
+    /**
+     * 删除日志
+     * @param logsDO 日志信息
+     */
+    @Override
+    public void deleteLogs(LogsDO logsDO) {
+        this.getSession().delete(logsDO);
+    }
 }

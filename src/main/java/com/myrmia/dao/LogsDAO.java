@@ -13,4 +13,16 @@ public interface LogsDAO {
      * @param logsDO 日志信息
      */
     void addLogs(LogsDO logsDO);
+
+    /**
+     * 更新日志
+     * @param logsDO 日志信息
+     */
+    void updateLogs(LogsDO logsDO);
+
+    /**
+     * 删除日志
+     * @param logsDO 日志信息
+     */
+    void deleteLogs(LogsDO logsDO);
 }

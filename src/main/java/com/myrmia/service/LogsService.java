@@ -14,4 +14,16 @@ public interface LogsService {
      */
     void addLogs(LogsDO logsDO);
 
+    /**
+     * 更新日志
+     * @param logsDO 日志信息
+     */
+    void modifyLogs(LogsDO logsDO);
+
+    /**
+     * 删除日志
+     * @param logsDO 日志信息
+     */
+    void deleteLogs(LogsDO logsDO);
+
 }

@@ -30,4 +30,22 @@ public class CommentsDAOImpl implements CommentsDAO {
     public void addComments(CommentsDO commentsDO) {
         this.getSession().save(commentsDO);
     }
+
+    /**
+     * 更新评论
+     * @param commentsDO 评论信息
+     */
+    @Override
+    public void updateComments(CommentsDO commentsDO) {
+        this.getSession().update(commentsDO);
+    }
+
+    /**
+     * 删除评论
+     * @param commentsDO 评论信息
+     */
+    @Override
+    public void deleteComments(CommentsDO commentsDO) {
+        this.getSession().delete(commentsDO);
+    }
 }

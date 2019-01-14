@@ -24,6 +24,24 @@ public class CommentsServiceImpl implements CommentsService {
         this.commentsDAO.addComments(commentsDO);
     }
 
+    /**
+     * 更新评论
+     * @param commentsDO 评论信息
+     */
+    @Override
+    public void modifyComments(CommentsDO commentsDO) {
+        this.commentsDAO.updateComments(commentsDO);
+    }
+
+    /**
+     * 删除评论
+     * @param commentsDO 评论信息
+     */
+    @Override
+    public void deleteComments(CommentsDO commentsDO) {
+        this.commentsDAO.deleteComments(commentsDO);
+    }
+
     @Autowired
     public void setCommentsDAO(CommentsDAO commentsDAO) {
         this.commentsDAO = commentsDAO;

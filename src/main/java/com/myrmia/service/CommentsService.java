@@ -13,4 +13,16 @@ public interface CommentsService {
      * @param commentsDO 评论信息
      */
     void addComments(CommentsDO commentsDO);
+
+    /**
+     * 更新评论
+     * @param commentsDO 评论信息
+     */
+    void modifyComments(CommentsDO commentsDO);
+
+    /**
+     * 删除评论
+     * @param commentsDO 评论信息
+     */
+    void deleteComments(CommentsDO commentsDO);
 }

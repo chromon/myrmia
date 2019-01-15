@@ -6,6 +6,8 @@ import com.myrmia.service.CommentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * comments service impl
  * Created by Ellery on 2019/1/13.
@@ -22,6 +24,16 @@ public class CommentsServiceImpl implements CommentsService {
     @Override
     public void addComments(CommentsDO commentsDO) {
         this.commentsDAO.addComments(commentsDO);
+    }
+
+    /**
+     * 由文章 id 查询评论列表
+     * @param cid 文章 id
+     * @return 评论列表
+     */
+    @Override
+    public List<CommentsDO> queryCommentsByCid(int cid) {
+        return this.commentsDAO.queryCommentsByCid(cid);
     }
 
     /**

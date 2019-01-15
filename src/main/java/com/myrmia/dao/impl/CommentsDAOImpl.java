@@ -4,9 +4,11 @@ import com.myrmia.dao.CommentsDAO;
 import com.myrmia.model.CommentsDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * comments dao impl
@@ -29,6 +31,19 @@ public class CommentsDAOImpl implements CommentsDAO {
     @Override
     public void addComments(CommentsDO commentsDO) {
         this.getSession().save(commentsDO);
+    }
+
+    /**
+     * 由文章 id 查询评论列表
+     * @param cid 文章 id
+     * @return 评论列表
+     */
+    @Override
+    public List<CommentsDO> queryCommentsByCid(int cid) {
+        String sql = "from CommentsDO c where c.cid=:cid";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("cid", cid);
+        return query.list();
     }
 
     /**

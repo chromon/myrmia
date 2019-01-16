@@ -92,7 +92,7 @@
                         </div>
                         <div class="card-body">
                             <#list metasList as meta>
-                            <div class="dropdown">
+                            <div class="dropdown category-inline">
                                 <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                                     ${meta.name}
                                     <span class="caret"></span></button>

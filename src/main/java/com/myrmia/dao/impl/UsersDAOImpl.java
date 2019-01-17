@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 用户信息持久化
@@ -43,6 +44,17 @@ public class UsersDAOImpl implements UsersDAO {
         Query query = this.getSession().createQuery(sql);
         query.setParameter("username", username);
         return (UsersDO) query.uniqueResult();
+    }
+
+    /**
+     * 查询用户列表
+     * @return 用户列表
+     */
+    @Override
+    public List<UsersDO> queryUsers() {
+        String sql = "from UsersDO";
+        Query query = this.getSession().createQuery(sql);
+        return query.list();
     }
 
     /**

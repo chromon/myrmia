@@ -2,6 +2,8 @@ package com.myrmia.dao;
 
 import com.myrmia.model.UsersDO;
 
+import java.util.List;
+
 /**
  * 用户信息数据访问对象
  * Created by Ellery on 2018/10/13.
@@ -20,6 +22,12 @@ public interface UsersDAO {
      * @return 用户信息
      */
     UsersDO queryUsersByName(String username);
+
+    /**
+     * 查询用户列表
+     * @return 用户列表
+     */
+    List<UsersDO> queryUsers();
 
     /**
      * 更新用户

@@ -6,6 +6,8 @@ import com.myrmia.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 用户信息业务逻辑实现类
  * Created by Ellery on 2018/10/13.
@@ -31,6 +33,15 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public UsersDO queryUsersByName(String username) {
         return this.usersDAO.queryUsersByName(username);
+    }
+
+    /**
+     * 查询用户列表
+     * @return 用户列表
+     */
+    @Override
+    public List<UsersDO> queryUsers() {
+        return this.usersDAO.queryUsers();
     }
 
     /**

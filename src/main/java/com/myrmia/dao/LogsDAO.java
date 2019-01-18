@@ -2,6 +2,8 @@ package com.myrmia.dao;
 
 import com.myrmia.model.LogsDO;
 
+import java.util.List;
+
 /**
  * logs dao
  * Created by Ellery on 2019/1/11.
@@ -13,6 +15,12 @@ public interface LogsDAO {
      * @param logsDO 日志信息
      */
     void addLogs(LogsDO logsDO);
+
+    /**
+     * 查询日志列表
+     * @return 日志列表
+     */
+    List<LogsDO> queryLogs();
 
     /**
      * 更新日志

@@ -6,6 +6,8 @@ import com.myrmia.service.LogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * logs service impl
  * Created by Ellery on 2019/1/11.
@@ -22,6 +24,15 @@ public class LogsServiceImpl implements LogsService {
     @Override
     public void addLogs(LogsDO logsDO) {
         this.logsDAO.addLogs(logsDO);
+    }
+
+    /**
+     * 查询日志列表
+     * @return 日志列表
+     */
+    @Override
+    public List<LogsDO> queryLogs() {
+        return this.logsDAO.queryLogs();
     }
 
     /**

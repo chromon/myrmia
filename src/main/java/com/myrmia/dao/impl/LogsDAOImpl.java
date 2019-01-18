@@ -4,9 +4,11 @@ import com.myrmia.dao.LogsDAO;
 import com.myrmia.model.LogsDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * logs dao impl
@@ -29,6 +31,17 @@ public class LogsDAOImpl implements LogsDAO {
     @Override
     public void addLogs(LogsDO logsDO) {
         this.getSession().save(logsDO);
+    }
+
+    /**
+     * 查询日志列表
+     * @return 日志列表
+     */
+    @Override
+    public List<LogsDO> queryLogs() {
+        String sql = "from LogsDO";
+        Query query = this.getSession().createQuery(sql);
+        return query.list();
     }
 
     /**

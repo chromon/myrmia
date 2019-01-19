@@ -83,6 +83,23 @@ public class CategoryController {
         return mapper.writeValueAsString(info);
     }
 
+    @RequestMapping(value="/deleteTag", method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteTag(@RequestParam("mid") int mid, Model model) throws JsonProcessingException {
+
+        // 删除分类
+
+
+        // 返回消息
+        Information info = new Information();
+        info.setInfoType("success");
+        info.setInfoContent("delete tag success.");
+
+        // json 格式化
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(info);
+    }
+
     @Autowired
     public void setMetasService(MetasService metasService) {
         this.metasService = metasService;

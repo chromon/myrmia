@@ -87,8 +87,16 @@ public class CategoryController {
     @ResponseBody
     public String deleteTag(@RequestParam("mid") int mid, Model model) throws JsonProcessingException {
 
-        // 删除分类
+        // 删除标签
+        List<RelationshipsDO> relationshipsDOList = relationshipsService.queryRelationshipsByMid(mid);
+        for (RelationshipsDO r: relationshipsDOList) {
+            this.relationshipsService.deleteRelationships(r);
+        }
 
+        MetasDO metasDO = this.metasService.queryMetasByMid(mid);
+        if (metasDO != null) {
+            this.metasService.deleteMetas(metasDO);
+        }
 
         // 返回消息
         Information info = new Information();

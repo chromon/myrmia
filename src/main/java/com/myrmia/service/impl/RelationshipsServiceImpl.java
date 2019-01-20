@@ -53,6 +53,15 @@ public class RelationshipsServiceImpl implements RelationshipsService {
      * @return 关系信息
      */
     @Override
+    public List<RelationshipsDO> queryRelationshipsByMid(int mid) {
+        return this.relationshipsDAO.queryRelationshipsByMid(mid);
+    }
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
+    @Override
     public List<RelationshipsDO> queryRelationshipsGroupByMid() {
         return this.relationshipsDAO.queryRelationshipsGroupByMid();
     }

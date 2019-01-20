@@ -68,6 +68,18 @@ public class RelationshipsDAOImpl implements RelationshipsDAO {
      * @return 关系信息
      */
     @Override
+    public List<RelationshipsDO> queryRelationshipsByMid(int mid) {
+        String sql = "from RelationshipsDO r where r.mid =:mid";
+        Query query = this.getSession().createQuery(sql);
+        query.setParameter("mid", mid);
+        return query.list();
+    }
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
+    @Override
     public List<RelationshipsDO> queryRelationshipsGroupByMid() {
         String sql = "from RelationshipsDO r group by r.mid";
         Query query = this.getSession().createQuery(sql);

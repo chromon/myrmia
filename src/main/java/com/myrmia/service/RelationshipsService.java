@@ -36,6 +36,12 @@ public interface RelationshipsService {
      * 查询关系由 mid 分组
      * @return 关系信息
      */
+    List<RelationshipsDO> queryRelationshipsByMid(int mid);
+
+    /**
+     * 查询关系由 mid 分组
+     * @return 关系信息
+     */
     List<RelationshipsDO> queryRelationshipsGroupByMid();
 
     /**

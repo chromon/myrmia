@@ -47,6 +47,20 @@ public class CommentsDAOImpl implements CommentsDAO {
     }
 
     /**
+     * 查询最新评论
+     * @param count 查询数量
+     * @return 评论列表
+     */
+    @Override
+    public List<CommentsDO> queryLastComments(int count) {
+        String sql = "from CommentsDO";
+        Query query = this.getSession().createQuery(sql);
+        query.setFirstResult(0);
+        query.setMaxResults(count);
+        return query.list();
+    }
+
+    /**
      * 更新评论
      * @param commentsDO 评论信息
      */

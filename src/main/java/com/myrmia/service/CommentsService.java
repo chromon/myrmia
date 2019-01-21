@@ -24,6 +24,13 @@ public interface CommentsService {
     List<CommentsDO> queryCommentsByCid(int cid);
 
     /**
+     * 查询最新评论
+     * @param count 查询数量
+     * @return 评论列表
+     */
+    List<CommentsDO> queryLastComments(int count);
+
+    /**
      * 更新评论
      * @param commentsDO 评论信息
      */

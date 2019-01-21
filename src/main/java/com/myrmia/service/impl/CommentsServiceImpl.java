@@ -37,6 +37,16 @@ public class CommentsServiceImpl implements CommentsService {
     }
 
     /**
+     * 查询最新评论
+     * @param count 查询数量
+     * @return 评论列表
+     */
+    @Override
+    public List<CommentsDO> queryLastComments(int count) {
+        return this.commentsDAO.queryLastComments(count);
+    }
+
+    /**
      * 更新评论
      * @param commentsDO 评论信息
      */

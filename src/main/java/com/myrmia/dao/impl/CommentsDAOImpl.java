@@ -53,7 +53,7 @@ public class CommentsDAOImpl implements CommentsDAO {
      */
     @Override
     public List<CommentsDO> queryLastComments(int count) {
-        String sql = "from CommentsDO";
+        String sql = "from CommentsDO c order by c.coid desc";
         Query query = this.getSession().createQuery(sql);
         query.setFirstResult(0);
         query.setMaxResults(count);

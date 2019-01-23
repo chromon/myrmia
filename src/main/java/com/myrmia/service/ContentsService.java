@@ -23,6 +23,13 @@ public interface ContentsService {
     List<ContentsDO> queryContents();
 
     /**
+     * 查询最新文章
+     * @param count 查询数量
+     * @return 文章列表
+     */
+    List<ContentsDO> queryLastContents(int count);
+
+    /**
      * 更新文章
      * @param contentsDO 文章内容
      */

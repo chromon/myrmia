@@ -45,6 +45,20 @@ public class ContentsDAOImpl implements ContentsDAO {
     }
 
     /**
+     * 查询最新文章
+     * @param count 查询数量
+     * @return 文章列表
+     */
+    @Override
+    public List<ContentsDO> queryLastContents(int count) {
+        String sql = "from ContentsDO c order by c.cid desc";
+        Query query = this.getSession().createQuery(sql);
+        query.setFirstResult(0);
+        query.setMaxResults(count);
+        return query.list();
+    }
+
+    /**
      * 更新文章
      * @param contentsDO 文章内容
      */

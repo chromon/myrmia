@@ -123,27 +123,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-
+                                    <#list contentsDOList as contentsDO>
                                     <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iBook</span></td>
-                                        <td><span class="badge badge-success">5</span></td>
+                                        <td>${contentsDO.title}</td>
+                                        <td><span>${contentsDO.created}</span></td>
+                                        <td><span class="badge badge-success">${contentsDO.commentsNum}</span></td>
                                     </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iPhone</span></td>
-                                        <td><span class="badge badge-success">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>456 pcs</span></td>
-                                        <td><span class="badge badge-success">12</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Abraham</td>
-                                        <td><span>iBook</span></td>
-                                        <td><span class="badge badge-success">3</span></td>
-                                    </tr>
+                                    </#list>
                                     </tbody>
                                 </table>
                             </div>

@@ -26,6 +26,7 @@ public class IndexController {
         List<ContentsDO> contentsDOList = contentsService.queryLastContents(10);
         model.addAttribute("contentsDOList", contentsDOList);
 
+        model.addAttribute("contentsSize", contentsDOList.size());
 
         model.addAttribute("active", "home");
         return "admin/index";

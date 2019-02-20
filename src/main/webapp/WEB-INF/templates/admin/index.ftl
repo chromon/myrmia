@@ -59,7 +59,7 @@
                                 <span><i class="fa fa-pencil-square-o f-s-40 color-primary"></i></span>
                             </div>
                             <div class="media-body media-text-right">
-                                <h2>568120</h2>
+                                <h2>${contentsSize}</h2>
                                 <p class="m-b-0">发表文章</p>
                             </div>
                         </div>

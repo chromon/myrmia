@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-label">标签</li>
-                <li <#if active ?? && active == "attach">class="active"</#if>>
+                <li <#if active ?? && active == "category">class="active"</#if>>
                     <a class="" href="/admin/category" aria-expanded="false">
                         <i class="fa fa-tags"></i>
                         <span class="hide-menu">

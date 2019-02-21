@@ -59,11 +59,14 @@
                             <#list categoryList as category>
                             <div class="dropdown category-inline" id="category-${category.mid}">
                                 <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                    ${category.name}
+                                    <span id="categoryName-${category.mid}">${category.name}</span>
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <li><a href="#">修改</a></li>
+                                    <#if category.name == "默认分类">
+                                    <#else>
+                                        <li><a href="javascript:void(0);" onclick="modifyCategory(${category.mid}, '${category.name}');">修改</a></li>
+                                    </#if>
                                     <li><a href="javascript:void(0);" onclick="deleteCategory(${category.mid});">删除</a></li>
                                 </ul>
                             </div>
@@ -107,9 +110,15 @@
 
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="form-group form-inline">
+                        <div id="save_category" class="form-group form-inline">
                             <input type="text" id="metasName" class="form-control links-right" placeholder="请输入分类名称">
                             <button type="submit" id="categorySubmit" class="btn btn-warning">保存分类</button>
+                        </div>
+                        <div id="modify_category" class="form-group form-inline hide">
+                            <input type="hidden" id="hiddenMid" value=""/>
+                            <input type="text" id="metasName2" class="form-control links-right" value="">
+                            <button type="button" id="cancalCategorySubmit" class="btn btn-warning" style="margin-right:10px;">取消</button>
+                            <button type="submit" id="categorySubmit2" class="btn btn-warning">修改分类</button>
                         </div>
                     </div>
                 </div>

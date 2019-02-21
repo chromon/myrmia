@@ -171,6 +171,61 @@ function deleteCategory(mid) {
     });
 }
 
+// 修改标签
+function modifyCategory(mid, categoryName) {
+    $('#save_category').addClass('hide');
+    $('#modify_category').removeClass('hide');
+    $('#metasName2').val(categoryName);
+    $('#hiddenMid').val(mid);
+}
+
+// 取消修改标签
+$('#cancalCategorySubmit').on('click', function() {
+    $('#save_category').removeClass('hide');
+    $('#modify_category').addClass('hide');
+    $('#metasName2').val();
+    $('#hiddenMid').val();
+});
+
+// 修改分类
+$('#categorySubmit2').on('click', function() {
+
+    let mid = $('#hiddenMid').val();
+    let metaName = $('#metasName2').val();
+
+
+    let data = {
+        mid: mid,
+        metaName: metaName
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/modifyCategory',
+        cache: false,
+        success: function (data) {
+            console.log(data);
+            console.log(data.mid);
+            $('#categoryName-' + data.mid).text(data.name);
+
+            $('#save_category').removeClass('hide');
+            $('#modify_category').addClass('hide');
+            $('#metasName2').val();
+            $('#hiddenMid').val();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+});
+
 // 发布文章
 $('#articlePublish').on('click', function() {
     let articleTitle = $('#articleTitle').val();

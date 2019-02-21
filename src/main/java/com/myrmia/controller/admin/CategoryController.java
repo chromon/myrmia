@@ -63,6 +63,21 @@ public class CategoryController {
         return metasDO;
     }
 
+    @RequestMapping(value="/modifyCategory", method = RequestMethod.POST)
+    @ResponseBody
+    public MetasDO modifyCategory(@RequestParam("mid") int mid,
+                                  @RequestParam("metaName") String metaName, Model model) {
+
+        // 查询分类
+        MetasDO metasDO = metasService.queryMetasByMid(mid);
+        if (metasDO != null) {
+            metasDO.setName(metaName);
+        }
+        metasService.modifyMetas(metasDO);
+
+        return metasDO;
+    }
+
     @RequestMapping(value="/deleteCategory", method = RequestMethod.POST)
     @ResponseBody
     public String deleteCategory(@RequestParam("mid") int mid, Model model) throws JsonProcessingException {

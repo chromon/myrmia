@@ -509,3 +509,35 @@ function deleteTag(mid) {
         }
     });
 }
+
+// 保存友链
+$('#save_link').on('click', function() {
+    let link_name = $('#link_name').val();
+    let origin_link = $('#origin_link').val();
+    let link_sort = $('#link_sort').val();
+
+    let data = {
+        linkName: link_name,
+        originLink: origin_link,
+        linkSort: link_sort
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/addLink',
+        cache: false,
+        success: function (data) {
+            console.log(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+});

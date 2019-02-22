@@ -53,12 +53,10 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="form-group form-inline">
-                            <input type="text" class="form-control links-right" placeholder="友链标题">
-                            <input type="text" class="form-control links-right" placeholder="友链链接">
-                            <input type="text" class="form-control links-right" placeholder="友链LOGO">
-                            <input type="text" class="form-control links-right" placeholder="友链排序">
-
-                            <button type="submit" class="btn btn-primary">保存友链</button>
+                            <input id="link_name" type="text" class="form-control links-right" placeholder="友链标题">
+                            <input id="origin_link" type="text" class="form-control links-right" placeholder="友链链接">
+                            <input id="link_sort" type="text" class="form-control links-right" placeholder="友链排序">
+                            <button id="save_link" type="submit" class="btn btn-primary">保存友链</button>
                         </div>
                     </div>
                 </div>
@@ -74,7 +72,6 @@
                                     <tr>
                                         <th>链接名称</th>
                                         <th>链接地址</th>
-                                        <th>链接LOGO</th>
                                         <th>链接排序</th>
                                         <th>操作</th>
                                     </tr>
@@ -84,80 +81,59 @@
                                     <tr>
                                         <td>John Abraham</td>
                                         <td><span>  January 22</span></td>
-                                        <td><span>iBook</span></td>
                                         <td><span class="badge badge-success">5</span></td>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
                                                 <i class="fa fa-pencil"></i>
-                                                Default
+                                                编辑
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
+                                                收藏
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>John Abraham</td>
                                         <td><span>  January 22</span></td>
-                                        <td><span>iBook</span></td>
                                         <td><span class="badge badge-danger">0</span></td>
-                                        <td>
                                             <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
                                                 <i class="fa fa-pencil"></i>
-                                                Default
+                                                编辑
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
+                                                收藏
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>John Abraham</td>
                                         <td><span>  January 22</span></td>
-                                        <td><span>iBook</span></td>
                                         <td><span class="badge badge-primary">12</span></td>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
                                                 <i class="fa fa-pencil"></i>
-                                                Default
+                                                编辑
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
+                                                收藏
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>John Abraham</td>
                                         <td><span>  January 22</span></td>
-                                        <td><span>iBook</span></td>
                                         <td><span class="badge badge-warning">3</span></td>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-flat btn-addon btn-sm">
                                                 <i class="fa fa-pencil"></i>
-                                                Default
+                                                编辑
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                                                Default
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-sm">
-                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                                Default
+                                                收藏
                                             </button>
                                         </td>
                                     </tr>

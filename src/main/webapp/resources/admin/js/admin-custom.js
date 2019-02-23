@@ -529,6 +529,7 @@ $('#save_link').on('click', function() {
         cache: false,
         success: function (data) {
             console.log(data);
+            alert('添加成功');
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log('responseText: ' + jqXHR.responseText);
@@ -541,3 +542,30 @@ $('#save_link').on('click', function() {
         }
     });
 });
+
+// 删除友链
+function deleteLink(mid) {
+    let data = {
+        mid: mid
+    };
+
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: basePath + '/admin/deleteLink',
+        cache: false,
+        success: function (data) {
+            // console.log(data);
+            $('#link-' + mid).addClass('hide');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('responseText: ' + jqXHR.responseText);
+            console.log('status: ' + jqXHR.status);
+            console.log('readyState: ' + jqXHR.readyState);
+            console.log('statusText: ' + jqXHR.statusText);
+
+            console.log('textStatus: ' + textStatus);
+            console.log('errorThrown: ' + errorThrown);
+        }
+    });
+}

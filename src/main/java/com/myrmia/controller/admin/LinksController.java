@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * admin article controller
  * Created by Ellery on 2018/11/1.
@@ -22,7 +24,11 @@ public class LinksController {
 
     @RequestMapping(value="/links", method = RequestMethod.GET)
     public String test(Model model) {
+        List<MetasDO> metasDOList = metasService.queryMetasByType("link");
+
         model.addAttribute("active", "links");
+        model.addAttribute("linkList", metasDOList);
+
         return "admin/links";
     }
 
@@ -45,6 +51,17 @@ public class LinksController {
         metasDO.setMetasType("link");
         metasDO.setSort(linkSort);
         metasService.saveMetas(metasDO);
+
+        return metasDO;
+    }
+
+    @RequestMapping(value="/deleteLink", method = RequestMethod.POST)
+    @ResponseBody
+    public MetasDO addCategory(@RequestParam("mid") int mid, Model model) {
+        MetasDO metasDO = metasService.queryMetasByMid(mid);
+        if(metasDO != null) {
+            metasService.deleteMetas(metasDO);
+        }
 
         return metasDO;
     }
